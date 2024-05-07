@@ -9,8 +9,7 @@ import Image from "next/image";
 import Header from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "Example dashboard app built using the components.",
+  title: "Painel",
 };
 
 export default function DashboardPage() {
@@ -19,14 +18,14 @@ export default function DashboardPage() {
       <Header />
 
       <div className="flex-1 space-y-4 p-8 pt-6">
-        <div className="flex items-center justify-between space-y-2">
-          <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+        <div className="flex items-center justify-between space-y-2 flex-wrap">
+          <h2 className="text-3xl font-bold tracking-tight">Painel</h2>
           <div className="flex items-center space-x-2">
             <CalendarDateRangePicker />
           </div>
         </div>
         <Tabs defaultValue="overview" className="space-y-4">
-          <TabsList>
+          <TabsList className="overflow-x-auto justify-start max-w-full">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="analytics">Analytics</TabsTrigger>
             <TabsTrigger value="reports">Reports</TabsTrigger>
@@ -127,7 +126,7 @@ export default function DashboardPage() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-              <Card className="col-span-4">
+              <Card className="col-span-3 md:col-span-4">
                 <CardHeader>
                   <CardTitle>Overview</CardTitle>
                 </CardHeader>
@@ -135,7 +134,7 @@ export default function DashboardPage() {
                   <Overview />
                 </CardContent>
               </Card>
-              <Card className="col-span-3">
+              <Card className="col-span-3 md:col-span-4 lg:col-span-3">
                 <CardHeader>
                   <CardTitle>Recent Sales</CardTitle>
                   <CardDescription>You made 265 sales this month.</CardDescription>
