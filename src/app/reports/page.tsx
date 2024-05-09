@@ -13,7 +13,7 @@ export default function ReportsPage() {
   return (
     <>
       <Header />
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <LateralMenu topics={reportsData} />
 
         <MainReports />

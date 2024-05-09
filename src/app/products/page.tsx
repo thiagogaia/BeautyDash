@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <div className="flex-col md:flex">
+    <div className="flex-col flex-col md:flex-row">
       <Header />
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <LateralMenu topics={productsData} />
 
         <MainProducts />

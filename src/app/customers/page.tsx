@@ -13,7 +13,7 @@ export default function CustomersPage() {
   return (
     <>
       <Header />
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <LateralMenu topics={customersData} />
 
         <MainCustomers />

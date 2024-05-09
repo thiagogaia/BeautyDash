@@ -14,7 +14,7 @@ export default function StorePage() {
     <div className="flex-col md:flex">
       <Header />
 
-      <div className="flex">
+      <div className="flex flex-col md:flex-row">
         <LateralMenu topics={storeData} />
 
         <MainStore />
