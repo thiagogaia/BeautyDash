@@ -2,24 +2,24 @@ import { Metadata } from "next";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CalendarDateRangePicker } from "@/app/dashboard/components/date-range-picker";
-import { Overview } from "@/app/dashboard/components/overview";
-import { RecentSales } from "@/app/dashboard/components/recent-sales";
+import { CalendarDateRangePicker } from "@/app/store/components/date-range-picker";
+import { Overview } from "@/app/store/components/overview";
+import { RecentSales } from "@/app/store/components/recent-sales";
 import Image from "next/image";
 import Header from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Painel",
+  title: "Exemplo",
 };
 
-export default function DashboardPage() {
+export default function ExamplePage() {
   return (
     <div className="flex-col md:flex">
       <Header />
 
       <div className="flex-1 space-y-4 p-8 pt-6">
         <div className="flex items-center justify-between space-y-2 flex-wrap">
-          <h2 className="text-3xl font-bold tracking-tight">Painel</h2>
+          <h2 className="text-3xl font-bold tracking-tight">Exemplo</h2>
           <div className="flex items-center space-x-2">
             <CalendarDateRangePicker />
           </div>

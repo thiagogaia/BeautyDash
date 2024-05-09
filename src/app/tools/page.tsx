@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Ferramentas",
 };
 
-export default function DashboardPage() {
+export default function ToolsPage() {
   return (
     <>
       <Header />

@@ -3,14 +3,13 @@ import { Metadata } from "next";
 import Header from "@/components/header";
 
 export const metadata: Metadata = {
-  title: "Relatorios",
+  title: "Loja",
 };
 
-export default function DashboardPage() {
+export default function StorePage() {
   return (
-    <>
+    <div className="flex-col md:flex">
       <Header />
-      <h1>Relatorios</h1>
-    </>
+    </div>
   );
 }
