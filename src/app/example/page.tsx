@@ -2,9 +2,9 @@ import { Metadata } from "next";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { CalendarDateRangePicker } from "@/app/store/components/date-range-picker";
-import { Overview } from "@/app/store/components/overview";
-import { RecentSales } from "@/app/store/components/recent-sales";
+import { CalendarDateRangePicker } from "@/app/example/components/date-range-picker";
+import { Overview } from "@/app/example/components/overview";
+import { RecentSales } from "@/app/example/components/recent-sales";
 import Image from "next/image";
 import Header from "@/components/header";
 

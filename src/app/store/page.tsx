@@ -2,21 +2,12 @@ import { Metadata } from "next";
 
 import Header from "@/components/header";
 import LateralMenu from "@/components/lateralMenu";
+import { MainStore } from "./components/main-store";
+import { storeData } from "./data";
 
 export const metadata: Metadata = {
   title: "Loja",
 };
-
-const topics = [
-  "home",
-  "banners",
-  "configurações",
-  "vendedores",
-  "área pix",
-  "estatísticas",
-  "importar dados",
-  "exportar dados",
-];
 
 export default function StorePage() {
   return (
@@ -24,7 +15,9 @@ export default function StorePage() {
       <Header />
 
       <div className="flex">
-        <LateralMenu topics={topics} />
+        <LateralMenu topics={storeData} />
+
+        <MainStore />
       </div>
     </div>
   );

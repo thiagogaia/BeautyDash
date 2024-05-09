@@ -1,11 +1,12 @@
 "use client";
 
-import { useTopicsContext } from "@/context/topics-provider";
-import { cn } from "@/lib/utils";
 import { useEffect } from "react";
+import { useTopicsContext } from "@/context/topics-provider";
+import { TopicType } from "@/context/types";
+import { cn } from "@/lib/utils";
 
 interface LateralMenuProps {
-  topics: string[];
+  topics: TopicType[];
 }
 
 export default function LateralMenu({ topics }: LateralMenuProps) {
@@ -21,15 +22,15 @@ export default function LateralMenu({ topics }: LateralMenuProps) {
       {data.map((topic, index) => (
         <span
           key={index}
-          onClick={() => setCurrentTopic(topic)}
+          onClick={() => setCurrentTopic(topic.name)}
           className={cn(
             "py-3 px-8 border-l-4 border-transparent hover:cursor-pointer hover:bg-[hsl(var(--foreground)/10%)]  hover:border-[hsl(var(--foreground)/50%)]",
-            curretTopic === topic
+            curretTopic === topic.name
               ? "bg-[hsl(var(--foreground)/10%)] border-[hsl(var(--foreground)/50%)]"
               : "bg-transparent"
           )}
         >
-          <p>{topic}</p>
+          <p>{topic.name}</p>
         </span>
       ))}
     </aside>
