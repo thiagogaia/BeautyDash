@@ -1,17 +1,21 @@
 import { Metadata } from "next";
 
 import Header from "@/components/header";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import LateralMenu from "@/components/lateralMenu";
 
 export const metadata: Metadata = {
   title: "Produtos",
 };
 
+const topics = ["meus produtos", "adicionar produto", "categorias", "variações"];
+
 export default function ProductsPage() {
   return (
     <div className="flex-col md:flex">
       <Header />
-      produtos
+      <div className="flex">
+        <LateralMenu topics={topics} />
+      </div>
     </div>
   );
 }

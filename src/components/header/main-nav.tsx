@@ -17,7 +17,7 @@ export function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElemen
           key={index}
           href={`/${link.uri}`}
           className={cn(
-            "text-sm flex font-medium items-center gap-2 transition-colors hover:text-primary",
+            "text-sm flex font-medium items-center gap-2 transition-colors hover:text-primary capitalize",
             pathIsTheSame(`/${link.uri}`) ? "" : "text-muted-foreground"
           )}
         >

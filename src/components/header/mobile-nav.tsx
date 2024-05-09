@@ -7,7 +7,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-import { Home, ShoppingBag, DollarSign, Coffee, Settings } from "lucide-react";
 import { usePathname } from "next/navigation";
 import data from "./data";
 
@@ -31,7 +30,7 @@ export default function MobileNav({ className, ...props }: React.HTMLAttributes<
                 key={index}
                 href={`/${link.uri}`}
                 className={cn(
-                  "text-sm flex font-medium text-xl items-center gap-2 transition-colors hover:text-primary",
+                  "text-sm flex font-medium text-xl items-center gap-2 transition-colors hover:text-primary capitalize",
                   pathIsTheSame(`/${link.uri}`) ? "" : "text-muted-foreground"
                 )}
               >

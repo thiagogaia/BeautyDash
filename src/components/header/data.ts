@@ -1,23 +1,23 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {
-    name: "Loja",
+    name: "loja",
     uri: "store",
   },
   {
-    name: "Produtos",
+    name: "produtos",
     uri: "products",
   },
   {
-    name: "Clientes",
+    name: "clientes",
     uri: "customers",
   },
   {
-    name: "Relatorios",
+    name: "relatorios",
     uri: "reports",
   },
   {
-    name: "Ferramentas",
+    name: "ferramentas",
     uri: "tools",
   },
 ];

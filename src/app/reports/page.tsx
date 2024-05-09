@@ -1,16 +1,21 @@
 import { Metadata } from "next";
 
 import Header from "@/components/header";
+import LateralMenu from "@/components/lateralMenu";
 
 export const metadata: Metadata = {
   title: "Relatorios",
 };
 
+const topics = ["pedidos", "produtos mais vendidos", "clientes que mais compram"];
+
 export default function ReportsPage() {
   return (
     <>
       <Header />
-      <h1>Relatorios</h1>
+      <div className="flex">
+        <LateralMenu topics={topics} />
+      </div>
     </>
   );
 }
