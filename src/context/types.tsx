@@ -1,11 +1,17 @@
-import topics from "@/app/store/components/data";
 import { ReactNode } from "react";
 
 export interface ProviderProps {
   children: ReactNode;
 }
 
-export type TopicType = (typeof topics)[number];
+const exampleTopicData = [
+  {
+    name: "",
+    component: <></>,
+  },
+];
+
+export type TopicType = (typeof exampleTopicData)[number];
 
 export interface TopicsContextProps {
   data: TopicType[];
