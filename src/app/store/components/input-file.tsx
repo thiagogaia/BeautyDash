@@ -44,7 +44,7 @@ export function InputFile({ field }: Props) {
         src={selectedImage ? URL.createObjectURL(selectedImage) : defaultImage}
         width="0"
         height="0"
-        className="max-w-[300px] min-w-[300px] min-h-[200px] max-h-[200px] object-contain"
+        className="max-w-[200px] min-w-[200px] min-h-[150px] max-h-[150px] xsm:max-w-[300px] xsm:min-w-[300px] xsm:min-h-[200px] xsm:max-h-[200px] object-contain"
         alt="Preview"
       />
       <Button variant="destructive" type="button" onClick={removeImage}>

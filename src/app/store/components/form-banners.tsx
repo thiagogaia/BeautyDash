@@ -27,7 +27,7 @@ export function FormBanners({ currentData }: Props) {
     <div className="pb-12">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <div className="flex justify-between">
+          <div className="flex justify-center 2xs:justify-between flex-wrap gap-y-8">
             <FormInputField
               formData={form}
               name="fileDesktop"

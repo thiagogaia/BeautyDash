@@ -15,7 +15,7 @@ export default function MobileNav({ className, ...props }: React.HTMLAttributes<
   const pathIsTheSame = (path: string) => (pathname === path ? true : false);
 
   return (
-    <div className="md:hidden">
+    <div className="2xs:hidden">
       <Sheet>
         <SheetTrigger>
           <Button variant="ghost" className="p-0 hover:bg-transparent">

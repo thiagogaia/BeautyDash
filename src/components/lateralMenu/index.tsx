@@ -18,7 +18,7 @@ export default function LateralMenu({ topics }: LateralMenuProps) {
   }, []);
 
   return (
-    <aside className="bg-[hsl(var(--secondary)/50%)] capitalize flex flex-row w-full overflow-x-auto md:h-screen md:flex-col md:py-8 md:w-1/5 hide-scrollbar">
+    <aside className="bg-[hsl(var(--secondary)/50%)] capitalize flex flex-row w-full overflow-x-auto md:min-h-screen md:flex-col md:py-8 md:w-1/5 hide-scrollbar">
       {data.map((topic, index) => (
         <span
           key={index}

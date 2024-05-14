@@ -39,7 +39,7 @@ export function Banners() {
         defaultValue={currentTab}
         value={currentTab}
         onValueChange={setCurrentTab}
-        className="w-[400px] ml-12 mt-6"
+        className=" mx-5 sm:mx-12 mt-6"
       >
         <TabsList className="grid w-full grid-cols-2">
           <TabsTrigger value="list" className="capitalize">
@@ -56,7 +56,7 @@ export function Banners() {
           <TableCellOperations setCurrentTab={setCurrentTab} setCurrentData={setCurrentData} />
         </TabsContent>
 
-        <TabsContent value="add" className="mt-6 w-[70vw]">
+        <TabsContent value="add" className="mt-6 w-full md:w-[70vw]">
           <FormBanners currentData={currentData} />
         </TabsContent>
       </Tabs>
