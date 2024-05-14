@@ -2,10 +2,10 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Relatorios",
+  title: "Clientes",
 };
 
-export default function ReportsPage() {
+export default function ClientsPage() {
   return (
     <>
       <Image

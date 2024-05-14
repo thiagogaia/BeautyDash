@@ -34,7 +34,7 @@ export default function MobileNav({ className, ...props }: React.HTMLAttributes<
                   pathIsTheSame(`/${link.uri}`) ? "" : "text-muted-foreground"
                 )}
               >
-                {link.name}
+                {link.title}
               </Link>
             ))}
           </nav>

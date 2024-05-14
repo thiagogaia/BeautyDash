@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { formBannerSchema } from "../schemas";
+import { Input } from "@/components/ui/input";
 
 interface Props {
   currentData: any;
@@ -48,6 +49,23 @@ export function FormBanners({ currentData }: Props) {
             name="link"
             title="Link: (https://nuzap.com.br/exemplo#/DESTINO)"
           />
+
+          <div className="flex justify-between gap-x-4 min-w-full">
+            <FormInputField
+              formData={form}
+              type="date"
+              name="initialDate"
+              title="Data de Início"
+              className="w-full"
+            />
+            <FormInputField
+              formData={form}
+              type="date"
+              name="finalDate"
+              title="Data Final"
+              className="w-full"
+            />
+          </div>
 
           <Button type="submit" className="w-full h-12">
             Salvar

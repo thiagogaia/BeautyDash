@@ -18,6 +18,7 @@ export function FormInputField({
   placeholder,
   name = "",
   type = "text",
+  className,
 }: InputProps) {
   return (
     <>
@@ -25,7 +26,7 @@ export function FormInputField({
         control={formData.control}
         name={name}
         render={({ field }) => (
-          <FormItem>
+          <FormItem className={className}>
             <FormLabel className="flex items-center gap-x-1 break-all">{title}</FormLabel>
             <FormControl>
               {type === "file" ? (

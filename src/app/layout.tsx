@@ -3,6 +3,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Providers from "@/context";
 import { cn } from "@/lib/utils";
+import Header from "@/components/header";
+import SidebarNav from "@/components/sidebar-nav";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -18,9 +20,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
-        <Providers>{children}</Providers>
-      </body>
+      <Providers>
+        <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
+          <Header />
+          <main className="flex flex-col md:flex-row">
+            <SidebarNav />
+            {children}
+          </main>
+        </body>
+      </Providers>
     </html>
   );
 }
