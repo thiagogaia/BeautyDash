@@ -23,7 +23,7 @@ import TableCellActions from "@/components/table-cell-actions";
 
 export function ListBanners() {
   return (
-    <Table className="mt-8">
+    <Table className="mt-8 mb-16">
       <TableHeader className="bg-secondary/40">
         <TableRow>
           <TableHead className="w-1/6 text-left">Imagem</TableHead>

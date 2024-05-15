@@ -18,7 +18,7 @@ export default function SidebarNav({ className, ...props }: React.HTMLAttributes
   return (
     <nav
       className={cn(
-        "bg-[hsl(var(--secondary)/50%)] capitalize flex flex-row w-full overflow-x-auto md:min-h-screen md:flex-col md:py-8 md:w-1/5 hide-scrollbar",
+        "bg-secondary/50 capitalize flex flex-row w-full overflow-x-auto md:min-h-screen md:flex-col md:py-8 md:w-1/5 hide-scrollbar",
         className
       )}
       {...props}
@@ -28,10 +28,8 @@ export default function SidebarNav({ className, ...props }: React.HTMLAttributes
           key={item.uri}
           href={item.uri}
           className={cn(
-            "border-transparent py-2 px-3 border-b-4 whitespace-nowrap hover:cursor-pointer md:whitespace-normal md:py-3 md:px-8 md:border-l-4 md:border-b-0 hover:bg-[hsl(var(--foreground)/10%)] hover:border-[hsl(var(--foreground)/50%)]",
-            pathname === item.uri
-              ? "bg-[hsl(var(--foreground)/10%)] border-[hsl(var(--foreground)/50%)]"
-              : "bg-transparent"
+            "border-transparent py-2 px-3 border-b-4 whitespace-nowrap hover:cursor-pointer md:whitespace-normal md:py-3 md:px-8 md:border-l-4 md:border-b-0 hover:bg-foreground/10 hover:border-foreground/50",
+            pathname === item.uri ? "bg-foreground/10 border-foreground/50" : "bg-transparent"
           )}
         >
           {item.title}

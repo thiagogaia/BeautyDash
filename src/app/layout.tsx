@@ -5,6 +5,7 @@ import Providers from "@/context";
 import { cn } from "@/lib/utils";
 import Header from "@/components/header";
 import SidebarNav from "@/components/sidebar-nav";
+import { Footer } from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
             <SidebarNav />
             {children}
           </main>
+          <Footer />
         </body>
       </Providers>
     </html>
