@@ -19,6 +19,7 @@ export function FormInputField({
   name = "",
   type = "text",
   className,
+  value,
 }: InputProps) {
   return (
     <FormField
@@ -29,9 +30,9 @@ export function FormInputField({
           <FormLabel className="flex items-center gap-x-1 break-all">{title}</FormLabel>
           <FormControl>
             {type === "file" ? (
-              <InputFile field={field} />
+              <InputFile field={field} {...field} value={value} />
             ) : (
-              <Input placeholder={placeholder} type={type} {...field} />
+              <Input placeholder={placeholder} type={type} {...field} defaultValue={value || ""} />
             )}
           </FormControl>
           <FormMessage />

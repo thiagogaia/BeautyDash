@@ -10,9 +10,10 @@ import defaultImage from "@/../public/img/upload-file-preview.png";
 
 interface Props {
   field: ControllerRenderProps<any, string>;
+  value: string | number | readonly string[] | undefined;
 }
 
-export function InputFile({ field }: Props) {
+export function InputFile({ field, value }: Props) {
   const [selectedImage, setSelectedImage] = useState<File>();
   const [inputFile, setInputFile] = useState<HTMLInputElement>();
 
@@ -41,9 +42,15 @@ export function InputFile({ field }: Props) {
         className="file:bg-secondary file:rounded-sm file:cursor-pointer file:h-full file:mr-2 p-0"
       />
       <Image
-        src={selectedImage ? URL.createObjectURL(selectedImage) : defaultImage}
-        width="0"
-        height="0"
+        src={
+          selectedImage
+            ? URL.createObjectURL(selectedImage)
+            : typeof value === "string" && value.length > 0
+            ? value
+            : defaultImage
+        }
+        width="150"
+        height="150"
         className="max-w-[200px] min-w-[200px] min-h-[150px] max-h-[150px] xsm:max-w-[300px] xsm:min-w-[300px] xsm:min-h-[200px] xsm:max-h-[200px] object-contain"
         alt="Preview"
       />

@@ -3,36 +3,42 @@
 import { useState } from "react";
 import { FormBanners } from "./form-banners";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import TableCellOperations from "@/components/table-cell-actions";
 import Filters from "@/components/filters/index.tsx";
 import { ListBanners } from "./list-banners";
 
-const data = {
-  headers: ["imagem", "titulo", "descrição"],
-  rows: [
-    {
-      id: "1",
-      title: "titulo grande usa para exemplo de teste",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus amet velit fuga odit temporibus. Doloribus delectus sapiente quae distinctio? Neque mollitia asperiores voluptate fugiat distinctio aspernatur incidunt sequi sunt fuga.",
-      link: "https://pbs.twimg.com/media/FyiZ0AvXwAADkLn?format=jpg&name=large",
-      imageDesktop: "https://i.imgur.com/IYP2Qt7.jpg",
-      imageMobile: "https://i.imgur.com/Q1OgylT.png",
-    },
-    {
-      id: "2",
-      title: "titulo bom",
-      description: "descrição bem pensada.",
-      link: "https://pbs.twimg.com/media/FyiZ0AvXwAADkLn?format=jpg&name=large",
-      imageDesktop: "https://i.imgur.com/MJbkKaT.jpg",
-      imageMobile: "https://i.imgur.com/WBIruiJ.jpg",
-    },
-  ],
-};
+const data = [
+  {
+    id: "1",
+    title: "titulo grande usa para exemplo de teste",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus amet velit fuga odit temporibus. Doloribus delectus sapiente quae distinctio? Neque mollitia asperiores voluptate fugiat distinctio aspernatur incidunt sequi sunt fuga.",
+    link: "https://pbs.twimg.com/media/FyiZ0AvXwAADkLn?format=jpg&name=large",
+    imageDesktop: "https://i.imgur.com/bjFioqN.jpg",
+    imageMobile: "https://i.imgur.com/Q1OgylT.png",
+  },
+  {
+    id: "2",
+    title: "titulo bom",
+    description: "descrição bem pensada.",
+    link: "https://pbs.twimg.com/media/FyiZ0AvXwAADkLn?format=jpg&name=large",
+    imageDesktop: "https://i.imgur.com/WBIruiJ.jpg",
+    imageMobile: "https://i.imgur.com/MJbkKaT.jpg",
+  },
+  {
+    id: "2",
+    title: "titulo bom",
+    description: "descrição bem pensada.",
+    link: "https://pbs.twimg.com/media/FyiZ0AvXwAADkLn?format=jpg&name=large",
+    imageDesktop: "",
+    imageMobile: "https://i.imgur.com/FWgfUZX.gif",
+  },
+];
+
+export type DataType = typeof data;
 
 export default function Banners() {
   const [currentTab, setCurrentTab] = useState<string>("list");
-  const [currentData, setCurrentData] = useState([]);
+  const [currentData, setCurrentData] = useState<DataType[number]>({} as DataType[number]);
 
   return (
     <>
@@ -54,7 +60,7 @@ export default function Banners() {
         <TabsContent value="list" className="mt-6 w-full md:w-[70vw]">
           <Filters />
 
-          <ListBanners />
+          <ListBanners data={data} setCurrentTab={setCurrentTab} setCurrentData={setCurrentData} />
         </TabsContent>
 
         <TabsContent value="add" className="mt-6 w-full md:w-[70vw]">

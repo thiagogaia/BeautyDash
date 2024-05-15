@@ -17,17 +17,11 @@ import { TableCell } from "../ui/table";
 import { SquarePen, Trash2 } from "lucide-react";
 
 interface Props {
-  setCurrentTab: (e: string) => void;
-  setCurrentData: (e: []) => void;
+  editData: () => void;
   className?: string;
 }
 
-export default function TableCellActions({ className, setCurrentTab, setCurrentData }: Props) {
-  const edit = () => {
-    setCurrentTab("add");
-    setCurrentData([]);
-  };
-
+export default function TableCellActions({ className, editData }: Props) {
   const exclude = () => console.log("removido");
 
   return (
@@ -46,7 +40,7 @@ export default function TableCellActions({ className, setCurrentTab, setCurrentD
             </AlertDialogHeader>
             <AlertDialogFooter>
               <AlertDialogCancel>Cancelar</AlertDialogCancel>
-              <AlertDialogAction onClick={edit}>Continuar</AlertDialogAction>
+              <AlertDialogAction onClick={editData}>Continuar</AlertDialogAction>
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>

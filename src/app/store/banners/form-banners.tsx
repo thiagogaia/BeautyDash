@@ -10,9 +10,10 @@ import { z } from "zod";
 import { formBannerSchema } from "../schemas";
 import { FormInputField } from "@/components/form-input-field";
 import { FormDateField } from "@/components/form-data-field";
+import { DataType } from "./page";
 
 interface Props {
-  currentData: any;
+  currentData: DataType[number];
 }
 
 export function FormBanners({ currentData }: Props) {
@@ -21,8 +22,6 @@ export function FormBanners({ currentData }: Props) {
   });
 
   const onSubmit = (values: z.infer<typeof formBannerSchema>) => console.log(values);
-
-  console.log(currentData);
 
   return (
     <div className="pb-12">
@@ -34,20 +33,28 @@ export function FormBanners({ currentData }: Props) {
               name="fileDesktop"
               type="file"
               title="Desktop: (1920X700px)"
+              value={currentData.imageDesktop}
             />
             <FormInputField
               formData={form}
               name="fileMobile"
               type="file"
               title="Mobile: (500X735px)"
+              value={currentData.imageMobile}
             />
           </div>
-          <FormInputField formData={form} name="title" title="Titulo" />
-          <FormInputField formData={form} name="description" title="Descrição" />
+          <FormInputField formData={form} name="title" title="Titulo" value={currentData.title} />
+          <FormInputField
+            formData={form}
+            name="description"
+            title="Descrição"
+            value={currentData.description}
+          />
           <FormInputField
             formData={form}
             name="link"
             title="Link: (https://nuzap.com.br/exemplo#/DESTINO)"
+            value={currentData.link}
           />
 
           <div className="flex justify-between flex-wrap xsm:flex-nowrap gap-4 min-w-full">
