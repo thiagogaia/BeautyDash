@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -18,9 +19,10 @@ import { SquarePen, Trash2 } from "lucide-react";
 interface Props {
   setCurrentTab: (e: string) => void;
   setCurrentData: (e: []) => void;
+  className?: string;
 }
 
-export default function TableCellOperations({ setCurrentTab, setCurrentData }: Props) {
+export default function TableCellActions({ className, setCurrentTab, setCurrentData }: Props) {
   const edit = () => {
     setCurrentTab("add");
     setCurrentData([]);
@@ -29,7 +31,7 @@ export default function TableCellOperations({ setCurrentTab, setCurrentData }: P
   const exclude = () => console.log("removido");
 
   return (
-    <TableCell className="text-right">
+    <TableCell className={className}>
       <div className="flex justify-end gap-x-2">
         <AlertDialog>
           <AlertDialogTrigger asChild className="cursor-pointer">

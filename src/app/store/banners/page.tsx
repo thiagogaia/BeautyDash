@@ -3,8 +3,9 @@
 import { useState } from "react";
 import { FormBanners } from "./form-banners";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import TableCellOperations from "@/components/table-cell-operations";
+import TableCellOperations from "@/components/table-cell-actions";
 import Filters from "@/components/filters/index.tsx";
+import { ListBanners } from "./list-banners";
 
 const data = {
   headers: ["imagem", "titulo", "descrição"],
@@ -46,14 +47,14 @@ export default function Banners() {
             Listagem
           </TabsTrigger>
           <TabsTrigger value="add" className="capitalize">
-            Cadastrar
+            Cadastrar / editar
           </TabsTrigger>
         </TabsList>
 
-        <TabsContent value="list" className="mt-6 w-[70vw]">
+        <TabsContent value="list" className="mt-6 w-full md:w-[70vw]">
           <Filters />
 
-          <TableCellOperations setCurrentTab={setCurrentTab} setCurrentData={setCurrentData} />
+          <ListBanners />
         </TabsContent>
 
         <TabsContent value="add" className="mt-6 w-full md:w-[70vw]">
