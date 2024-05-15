@@ -16,12 +16,14 @@ interface Props {
   data: DataType;
   setCurrentTab: (e: string) => void;
   setCurrentData: (e: DataType[number]) => void;
+  setEditData: (e: boolean) => void;
 }
 
-export function ListBanners({ data, setCurrentData, setCurrentTab }: Props) {
+export function ListBanners({ data, setEditData, setCurrentData, setCurrentTab }: Props) {
   const edit = (itemData: DataType[number]) => {
     setCurrentTab("add");
     setCurrentData(itemData);
+    setEditData(true);
   };
 
   return (

@@ -15,6 +15,8 @@ const data = [
     link: "https://pbs.twimg.com/media/FyiZ0AvXwAADkLn?format=jpg&name=large",
     imageDesktop: "https://i.imgur.com/bjFioqN.jpg",
     imageMobile: "https://i.imgur.com/Q1OgylT.png",
+    initialDate: "2024-05-07T03:24:00",
+    finalDate: "2024-05-27T03:24:00",
   },
   {
     id: "2",
@@ -23,6 +25,8 @@ const data = [
     link: "https://pbs.twimg.com/media/FyiZ0AvXwAADkLn?format=jpg&name=large",
     imageDesktop: "https://i.imgur.com/WBIruiJ.jpg",
     imageMobile: "https://i.imgur.com/MJbkKaT.jpg",
+    initialDate: "2024-05-07T03:24:00",
+    finalDate: "2024-05-27T03:24:00",
   },
   {
     id: "2",
@@ -31,14 +35,18 @@ const data = [
     link: "https://pbs.twimg.com/media/FyiZ0AvXwAADkLn?format=jpg&name=large",
     imageDesktop: "",
     imageMobile: "https://i.imgur.com/FWgfUZX.gif",
+    initialDate: "2024-05-07T03:24:00",
+    finalDate: "2024-05-27T03:24:00",
   },
 ];
 
 export type DataType = typeof data;
+export type DataItemType = DataType[number];
 
 export default function Banners() {
+  const [editData, setEditData] = useState<boolean>(false);
   const [currentTab, setCurrentTab] = useState<string>("list");
-  const [currentData, setCurrentData] = useState<DataType[number]>({} as DataType[number]);
+  const [currentData, setCurrentData] = useState<DataItemType>({} as DataItemType);
 
   return (
     <>
@@ -49,7 +57,7 @@ export default function Banners() {
         className=" mx-5 sm:mx-12 mt-6"
       >
         <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="list" className="capitalize">
+          <TabsTrigger value="list" className="capitalize" onClick={() => setEditData(false)}>
             Listagem
           </TabsTrigger>
           <TabsTrigger value="add" className="capitalize">
@@ -60,11 +68,16 @@ export default function Banners() {
         <TabsContent value="list" className="mt-6 w-full md:w-[70vw]">
           <Filters />
 
-          <ListBanners data={data} setCurrentTab={setCurrentTab} setCurrentData={setCurrentData} />
+          <ListBanners
+            data={data}
+            setEditData={setEditData}
+            setCurrentTab={setCurrentTab}
+            setCurrentData={setCurrentData}
+          />
         </TabsContent>
 
         <TabsContent value="add" className="mt-6 w-full md:w-[70vw]">
-          <FormBanners currentData={currentData} />
+          <FormBanners currentData={editData ? currentData : ({} as DataItemType)} />
         </TabsContent>
       </Tabs>
     </>

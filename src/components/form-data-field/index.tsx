@@ -17,7 +17,9 @@ interface InputProps extends InputType {
   title: string;
 }
 
-export function FormDateField({ formData, title, name = "", className }: InputProps) {
+export function FormDateField({ formData, title, value, name = "", className }: InputProps) {
+  const date = new Date(value as string);
+
   return (
     <FormField
       control={formData.control}
@@ -36,14 +38,20 @@ export function FormDateField({ formData, title, name = "", className }: InputPr
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {field.value ? format(field.value, "dd/MM/yyyy") : <span>Escolha uma data</span>}
+                  {field.value ? (
+                    format(field.value, "dd/MM/yyyy")
+                  ) : typeof value === "string" && value.length > 0 ? (
+                    format(date, "dd/MM/yyyy")
+                  ) : (
+                    <span>Escolha uma data</span>
+                  )}
                 </Button>
               </FormControl>
             </PopoverTrigger>
             <PopoverContent className="w-auto p-0" align="start">
               <Calendar
                 mode="single"
-                selected={field.value}
+                selected={typeof value === "string" && value.length > 0 ? date : field.value}
                 onSelect={field.onChange}
                 initialFocus
               />

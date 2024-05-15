@@ -19,6 +19,13 @@ interface Props {
 export function FormBanners({ currentData }: Props) {
   const form = useForm<z.infer<typeof formBannerSchema>>({
     resolver: zodResolver(formBannerSchema),
+    defaultValues: {
+      title: currentData.title || undefined,
+      description: currentData.description || undefined,
+      link: currentData.link || undefined,
+      initialDate: currentData.initialDate ? new Date(currentData.initialDate) : undefined,
+      finalDate: currentData.finalDate ? new Date(currentData.finalDate) : undefined,
+    },
   });
 
   const onSubmit = (values: z.infer<typeof formBannerSchema>) => console.log(values);
@@ -63,8 +70,15 @@ export function FormBanners({ currentData }: Props) {
               name="initialDate"
               title="Data de Início"
               className="w-full"
+              value={currentData.initialDate}
             />
-            <FormDateField formData={form} name="finalDate" title="Data Final" className="w-full" />
+            <FormDateField
+              formData={form}
+              name="finalDate"
+              title="Data Final"
+              className="w-full"
+              value={currentData.finalDate}
+            />
           </div>
 
           <Button type="submit" className="w-full h-12">
