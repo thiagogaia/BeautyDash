@@ -1,9 +1,5 @@
 import { Metadata } from "next";
-
-import Header from "@/components/header";
-import LateralMenu from "@/components/lateralMenu";
-import { toolsData } from "./data";
-import { MainTools } from "./components/main-tools";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Ferramentas",
@@ -12,12 +8,13 @@ export const metadata: Metadata = {
 export default function ToolsPage() {
   return (
     <>
-      <Header />
-      <div className="flex flex-col md:flex-row">
-        <LateralMenu topics={toolsData} />
-
-        <MainTools />
-      </div>
+      <Image
+        width="1000"
+        height="1000"
+        src="https://i.imgur.com/lZ85UFE.gif"
+        alt="gif"
+        className="w-full h-screen fixed z-[-1]"
+      />
     </>
   );
 }

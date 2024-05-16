@@ -9,7 +9,7 @@ export default function Header() {
     <div className="border-b sticky top-0 z-50 bg-background">
       <div className="flex h-16 items-center px-4">
         <TeamSwitcher />
-        <MainNav className="mx-6 hidden md:flex" />
+        <MainNav className="mx-6 hidden 2xs:flex" />
         <div className="ml-auto flex items-center space-x-4">
           <MobileNav />
           <ModeToggle />

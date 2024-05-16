@@ -20,7 +20,10 @@ const config = {
     },
     extend: {
       screens: {
+        xsm: "320px",
         xs: "500px",
+        "2xs": "700px",
+        md: "860px",
         "2md": "900px",
       },
       colors: {

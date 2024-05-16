@@ -8,7 +8,7 @@ export default function Home() {
         height="1000"
         src="https://i.imgur.com/lZ85UFE.gif"
         alt="gif"
-        className="w-full h-screen"
+        className="w-full h-screen fixed z-[-1]"
       />
     </div>
   );

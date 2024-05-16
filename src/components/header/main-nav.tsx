@@ -8,7 +8,8 @@ import data from "./data";
 
 export function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElement>) {
   const pathname = usePathname();
-  const pathIsTheSame = (path: string) => (pathname === path ? true : false);
+  const pathIsTheSame = (path: string) =>
+    pathname.split("/")[1] === path.split("/")[1] ? true : false;
 
   return (
     <nav className={cn("flex items-center space-x-4 lg:space-x-6", className)} {...props}>
@@ -21,7 +22,7 @@ export function MainNav({ className, ...props }: React.HTMLAttributes<HTMLElemen
             pathIsTheSame(`/${link.uri}`) ? "" : "text-muted-foreground"
           )}
         >
-          {link.name}
+          {link.title}
         </Link>
       ))}
     </nav>

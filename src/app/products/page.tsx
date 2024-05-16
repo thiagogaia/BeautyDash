@@ -1,9 +1,5 @@
 import { Metadata } from "next";
-
-import Header from "@/components/header";
-import LateralMenu from "@/components/lateralMenu";
-import { productsData } from "./data";
-import { MainProducts } from "./components/main-products";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Produtos",
@@ -11,13 +7,14 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <div className="flex-col flex-col md:flex-row">
-      <Header />
-      <div className="flex flex-col md:flex-row">
-        <LateralMenu topics={productsData} />
-
-        <MainProducts />
-      </div>
-    </div>
+    <>
+      <Image
+        width="1000"
+        height="1000"
+        src="https://i.imgur.com/lZ85UFE.gif"
+        alt="gif"
+        className="w-full h-screen fixed z-[-1]"
+      />
+    </>
   );
 }
