@@ -7,16 +7,18 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { FormInputField } from "@/components/form-input-field";
 import { formSettingsSchema } from "../schemas";
+import Customization from "./customizations";
+
+const data = {
+  name: "loujinha",
+  whatsapp: "48 97894-3215",
+  uri: "exemple",
+};
+
+export type SettingsType = typeof data;
 
 export function FormSettings() {
-  const data = {
-    name: "loujinha",
-    whatsapp: "48 97894-3215",
-    uri: "exemple",
-  };
-
   const form = useForm<z.infer<typeof formSettingsSchema>>({
     resolver: zodResolver(formSettingsSchema),
     defaultValues: {
@@ -31,19 +33,7 @@ export function FormSettings() {
     <div className="pb-12">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-          <FormInputField formData={form} name="title" title="Titulo" value={data.name} />
-          <FormInputField
-            formData={form}
-            name="description"
-            title="Descrição"
-            value={data.whatsapp}
-          />
-          <FormInputField
-            formData={form}
-            name="link"
-            title="Link: (https://nuzap.com.br/exemplo#/DESTINO)"
-            value={data.uri}
-          />
+          <Customization formData={form} data={data} />
 
           <Button type="submit" className="w-full h-12">
             Salvar

@@ -10,16 +10,18 @@ type InputType = React.InputHTMLAttributes<HTMLInputElement>;
 interface InputProps extends InputType {
   formData: UseFormReturn<any>;
   title?: string;
+  removeOptions?: boolean;
 }
 
 export function FormInputField({
   formData,
   title,
-  placeholder,
   name = "",
   type = "text",
   className,
   value,
+  removeOptions = true,
+  ...props
 }: InputProps) {
   return (
     <FormField
@@ -30,9 +32,9 @@ export function FormInputField({
           <FormLabel className="flex items-center gap-x-1 break-all">{title}</FormLabel>
           <FormControl>
             {type === "file" ? (
-              <InputFile field={field} {...field} value={value} />
+              <InputFile field={field} {...field} value={value} removeOptions={removeOptions} />
             ) : (
-              <Input placeholder={placeholder} type={type} {...field} defaultValue={value || ""} />
+              <Input {...props} {...field} defaultValue={value || ""} />
             )}
           </FormControl>
           <FormMessage />

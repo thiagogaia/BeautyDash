@@ -12,12 +12,12 @@ import { UseFormReturn } from "react-hook-form";
 
 type InputType = React.InputHTMLAttributes<HTMLInputElement>;
 
-interface InputProps extends InputType {
+interface DataProps extends InputType {
   formData: UseFormReturn<any>;
   title?: string;
 }
 
-export function FormDateField({ formData, title, value, name = "", className }: InputProps) {
+export function FormDateField({ formData, title, value, name = "", className }: DataProps) {
   const date = new Date(value as string);
 
   return (
