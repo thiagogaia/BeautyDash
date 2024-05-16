@@ -87,4 +87,22 @@
     line-clamp: 2;
     -webkit-box-orient: vertical;
   }
+
+  .input-search>.input-container>input {
+    margin: 0 !important;
+    background: transparent;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    outline: none;
+  }
+
+  .input-search>.input-container>input:focus-visible {
+    box-shadow: none;
+    outline: none !important;
+  }
+
+  .input-search:focus-within {
+    outline: 2px solid hsl(var(--foreground));
+  }
 }

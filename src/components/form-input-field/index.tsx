@@ -9,7 +9,7 @@ type InputType = React.InputHTMLAttributes<HTMLInputElement>;
 
 interface InputProps extends InputType {
   formData: UseFormReturn<any>;
-  title: string;
+  title?: string;
 }
 
 export function FormInputField({

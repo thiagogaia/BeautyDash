@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { FormBanners } from "./form-banners";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Filters from "@/components/filters/index.tsx";
+import Filters from "@/app/store/banners/filters";
 import { ListBanners } from "./list-banners";
 
 const data = [
