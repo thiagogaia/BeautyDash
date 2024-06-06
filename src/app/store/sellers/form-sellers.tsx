@@ -8,8 +8,8 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { formSellerSchema } from "../schemas";
-import { FormInputField } from "@/components/form-input-field";
 import { DataType } from "./page";
+import { FormInputField } from "@/components/form-fileds/form-input-field";
 
 interface Props {
   currentData: DataType[number];

@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { TablleCellProps } from "@/types";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -16,12 +16,7 @@ import { TableCell } from "../ui/table";
 
 import { SquarePen, Trash2 } from "lucide-react";
 
-interface Props {
-  editData: () => void;
-  className?: string;
-}
-
-export default function TableCellActions({ className, editData }: Props) {
+export default function TableCellActions({ className, editData }: TablleCellProps) {
   const exclude = () => console.log("removido");
 
   return (

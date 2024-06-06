@@ -4,7 +4,6 @@ import { z } from "zod";
 import { Form } from "../../../components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FormDateField } from "../../../components/form-data-field";
 import { Button } from "../../../components/ui/button";
 import {
   Select,
@@ -15,9 +14,10 @@ import {
   SelectValue,
 } from "../../../components/ui/select";
 import { Database, Search } from "lucide-react";
-import { FormInputField } from "../../../components/form-input-field";
 import { Separator } from "../../../components/ui/separator";
 import { filterSchema } from "../schemas";
+import { FormInputField } from "@/components/form-fileds/form-input-field";
+import { FormDateField } from "@/components/form-fileds/form-data-field";
 
 export default function Filters() {
   const form = useForm<z.infer<typeof filterSchema>>({

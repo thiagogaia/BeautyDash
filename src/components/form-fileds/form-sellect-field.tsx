@@ -1,22 +1,16 @@
 "use client";
 
+import { FormSelectFieldProps } from "@/types/form";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
-import { UseFormReturn } from "react-hook-form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
-type InputType = React.InputHTMLAttributes<HTMLInputElement>;
-
-interface SelectProps extends InputType {
-  formData: UseFormReturn<any>;
-  title?: string;
-}
 export function FormSellectField({
   formData,
   title,
   name = "",
   className,
   placeholder,
-}: SelectProps) {
+}: FormSelectFieldProps) {
   return (
     <FormField
       control={formData.control}

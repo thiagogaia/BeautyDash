@@ -1,8 +1,8 @@
-import { FormInputField } from "@/components/form-input-field";
 import { UseFormReturn } from "react-hook-form";
 import { SettingsType } from "./form-settings";
-import { FormSellectField } from "@/components/form-sellect-field";
-import { FormTextareaField } from "@/components/form-textarea-field";
+import { FormInputField } from "@/components/form-fileds/form-input-field";
+import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
+import { FormTextareaField } from "@/components/form-fileds/form-textarea-field";
 
 interface Props {
   formData: UseFormReturn<any>;

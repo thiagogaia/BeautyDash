@@ -1,22 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ControllerRenderProps } from "react-hook-form";
 
 import defaultImage from "@/../public/img/upload-file-preview.png";
+import { InputFileProps } from "@/types";
 
-interface Props {
-  field: ControllerRenderProps<any, string>;
-  value: string | number | readonly string[] | undefined;
-  removeOptions: boolean;
-}
-
-export function InputFile({ field, value, removeOptions }: Props) {
+export function InputFile({ field, value, removeOptions }: InputFileProps) {
   const [selectedImage, setSelectedImage] = useState<File>();
   const [inputFile, setInputFile] = useState<HTMLInputElement>();
+  const [currentValue, setCurrentValue] = useState<string>(value || "");
 
   const imageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -27,6 +22,7 @@ export function InputFile({ field, value, removeOptions }: Props) {
 
   const removeImage = () => {
     setSelectedImage(undefined);
+    setCurrentValue("");
 
     if (inputFile !== undefined) {
       inputFile.value = "";
@@ -46,8 +42,8 @@ export function InputFile({ field, value, removeOptions }: Props) {
         src={
           selectedImage
             ? URL.createObjectURL(selectedImage)
-            : typeof value === "string" && value.length > 0
-            ? value
+            : currentValue.length > 0
+            ? currentValue
             : defaultImage
         }
         width="150"

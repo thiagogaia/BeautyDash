@@ -2,16 +2,8 @@
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { UseFormReturn } from "react-hook-form";
 import { InputFile } from "../input-file";
-
-type InputType = React.InputHTMLAttributes<HTMLInputElement>;
-
-interface InputProps extends InputType {
-  formData: UseFormReturn<any>;
-  title?: string;
-  removeOptions?: boolean;
-}
+import { FormInputFieldProps } from "@/types/form";
 
 export function FormInputField({
   formData,
@@ -22,7 +14,7 @@ export function FormInputField({
   value,
   removeOptions = true,
   ...props
-}: InputProps) {
+}: FormInputFieldProps) {
   return (
     <FormField
       control={formData.control}
@@ -32,7 +24,12 @@ export function FormInputField({
           <FormLabel className="flex items-center gap-x-1 break-all">{title}</FormLabel>
           <FormControl>
             {type === "file" ? (
-              <InputFile field={field} {...field} value={value} removeOptions={removeOptions} />
+              <InputFile
+                field={field}
+                {...field}
+                value={value as string}
+                removeOptions={removeOptions}
+              />
             ) : (
               <Input {...props} {...field} defaultValue={value || ""} />
             )}

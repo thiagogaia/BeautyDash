@@ -1,22 +1,16 @@
 "use client";
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
-import { UseFormReturn } from "react-hook-form";
 import { Textarea } from "../ui/textarea";
+import { FormTextareaFieldProps } from "@/types/form";
 
-type TextareaType = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
-
-interface TextareaProps extends TextareaType {
-  formData: UseFormReturn<any>;
-  title?: string;
-}
 export function FormTextareaField({
   formData,
   title,
   name = "",
   className,
   ...props
-}: TextareaProps) {
+}: FormTextareaFieldProps) {
   return (
     <FormField
       control={formData.control}

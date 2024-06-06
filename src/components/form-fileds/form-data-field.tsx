@@ -8,16 +8,15 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
-import { UseFormReturn } from "react-hook-form";
+import { FormDataFieldProps } from "@/types/form";
 
-type InputType = React.InputHTMLAttributes<HTMLInputElement>;
-
-interface DataProps extends InputType {
-  formData: UseFormReturn<any>;
-  title?: string;
-}
-
-export function FormDateField({ formData, title, value, name = "", className }: DataProps) {
+export function FormDateField({
+  formData,
+  title,
+  value,
+  name = "",
+  className,
+}: FormDataFieldProps) {
   const date = new Date(value as string);
 
   return (

@@ -8,9 +8,9 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { formBannerSchema } from "../schemas";
-import { FormInputField } from "@/components/form-input-field";
-import { FormDateField } from "@/components/form-data-field";
 import { DataType } from "./page";
+import { FormInputField } from "@/components/form-fileds/form-input-field";
+import { FormDateField } from "@/components/form-fileds/form-data-field";
 
 interface Props {
   currentData: DataType[number];
