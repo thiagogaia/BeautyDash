@@ -27,7 +27,7 @@ export function FormInputField({
               <InputFile
                 field={field}
                 {...field}
-                value={value as string}
+                value={(value as string) || ""}
                 removeOptions={removeOptions}
               />
             ) : (

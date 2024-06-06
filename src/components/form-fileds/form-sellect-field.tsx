@@ -6,10 +6,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 
 export function FormSellectField({
   formData,
+  defaultValue,
   title,
   name = "",
   className,
   placeholder,
+  data = [],
 }: FormSelectFieldProps) {
   return (
     <FormField
@@ -18,16 +20,16 @@ export function FormSellectField({
       render={({ field }) => (
         <FormItem className={className}>
           <FormLabel>{title}</FormLabel>
-          <Select onValueChange={field.onChange} defaultValue={field.value}>
+          <Select onValueChange={field.onChange} defaultValue={field.value || defaultValue}>
             <FormControl>
               <SelectTrigger>
                 <SelectValue placeholder={placeholder || "Selecione um valor"} />
               </SelectTrigger>
             </FormControl>
             <SelectContent>
-              {[...new Array(6)].map((_, index) => (
-                <SelectItem key={index} value={"opção número" + index + 1}>
-                  opção número {index + 1}
+              {data.map((value, index) => (
+                <SelectItem key={`opção número${index + 1}`} value={value}>
+                  {value}
                 </SelectItem>
               ))}
             </SelectContent>

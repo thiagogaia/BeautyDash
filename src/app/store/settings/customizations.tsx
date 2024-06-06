@@ -38,6 +38,7 @@ export default function Customization({ formData, data }: Props) {
             name="branch"
             title="Ramo"
             className="w-full xs:w-2/4"
+            data={["valor 1", "valor 2", "valor 3"]}
           />
           <FormInputField
             formData={formData}
@@ -56,9 +57,19 @@ export default function Customization({ formData, data }: Props) {
           placeholder="Descrição da sua loja"
         />
 
-        <FormSellectField formData={formData} name="order" title="Ordem de exibição dos produtos" />
+        <FormSellectField
+          formData={formData}
+          name="order"
+          title="Ordem de exibição dos produtos"
+          data={["valor 1", "valor 2", "valor 3", "valor 4", "valor 5"]}
+        />
 
-        <FormSellectField formData={formData} name="theme" title="Selecionar Tema da Loja" />
+        <FormSellectField
+          formData={formData}
+          name="theme"
+          title="Selecionar Tema da Loja"
+          data={["valor 1", "valor 2", "valor 3"]}
+        />
       </div>
     </div>
   );

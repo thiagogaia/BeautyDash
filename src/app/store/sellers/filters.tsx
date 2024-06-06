@@ -5,20 +5,12 @@ import { Form } from "../../../components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "../../../components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "../../../components/ui/select";
 import { Database, Search } from "lucide-react";
 import { Separator } from "../../../components/ui/separator";
 import { filterSchema } from "../schemas";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormDateField } from "@/components/form-fileds/form-data-field";
+import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
 
 export default function Filters() {
   const form = useForm<z.infer<typeof filterSchema>>({
@@ -42,18 +34,12 @@ export default function Filters() {
             />
           </div>
 
-          <Select defaultValue="20">
-            <SelectTrigger className="w-min gap-x-1">
-              <SelectValue placeholder="20" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectItem value="20">20</SelectItem>
-                <SelectItem value="50">50</SelectItem>
-                <SelectItem value="100">100</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+          <FormSellectField
+            formData={form}
+            placeholder="20"
+            defaultValue="20"
+            data={["20", "50", "100"]}
+          />
 
           <Button type="button" variant="outline">
             <Database className="mr-2" /> Exportar Excel

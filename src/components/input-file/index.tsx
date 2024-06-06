@@ -11,7 +11,7 @@ import { InputFileProps } from "@/types";
 export function InputFile({ field, value, removeOptions }: InputFileProps) {
   const [selectedImage, setSelectedImage] = useState<File>();
   const [inputFile, setInputFile] = useState<HTMLInputElement>();
-  const [currentValue, setCurrentValue] = useState<string>(value || "");
+  const [currentValue, setCurrentValue] = useState<string>(value);
 
   const imageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {

@@ -14,6 +14,8 @@ export interface FormInputFieldProps extends InputType, FormFieldProps {
   removeOptions?: boolean;
 }
 
-export interface FormSelectFieldProps extends InputType, FormFieldProps {}
+export interface FormSelectFieldProps extends InputType, FormFieldProps {
+  data: string[];
+}
 
 export interface FormTextareaFieldProps extends TextareaType, FormFieldProps {}
