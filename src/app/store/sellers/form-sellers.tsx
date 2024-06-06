@@ -53,7 +53,7 @@ export function FormSellers({ currentData }: Props) {
             value={currentData.whatsapp}
           />
 
-          <Button type="submit" className="w-full h-12">
+          <Button type="submit" className="w-full h-12 save-form-button">
             Salvar
           </Button>
         </form>

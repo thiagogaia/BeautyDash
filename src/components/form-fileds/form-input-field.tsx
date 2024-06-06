@@ -31,7 +31,12 @@ export function FormInputField({
                 removeOptions={removeOptions}
               />
             ) : (
-              <Input {...props} {...field} defaultValue={value || ""} />
+              <Input
+                {...props}
+                {...field}
+                defaultValue={value || ""}
+                className="disabled:bg-secondary disabled:text-primary/70 disabled:opacity-1"
+              />
             )}
           </FormControl>
           <FormMessage />

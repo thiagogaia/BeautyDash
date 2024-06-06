@@ -40,6 +40,7 @@ export function FormBanners({ currentData }: Props) {
               name="fileDesktop"
               type="file"
               title="Desktop: (1920X700px)"
+              className="max-w-[200px] min-w-[200px] xsm:max-w-[300px] xsm:min-w-[300px]"
               value={currentData.imageDesktop}
             />
             <FormInputField
@@ -47,6 +48,7 @@ export function FormBanners({ currentData }: Props) {
               name="fileMobile"
               type="file"
               title="Mobile: (500X735px)"
+              className="max-w-[200px] min-w-[200px] xsm:max-w-[300px] xsm:min-w-[300px]"
               value={currentData.imageMobile}
             />
           </div>
@@ -81,7 +83,7 @@ export function FormBanners({ currentData }: Props) {
             />
           </div>
 
-          <Button type="submit" className="w-full h-12">
+          <Button type="submit" className="w-full h-12 save-form-button">
             Salvar
           </Button>
         </form>

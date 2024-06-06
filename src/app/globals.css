@@ -75,6 +75,10 @@
     @apply bg-background text-foreground;
   }
 
+  .save-form-button {
+    @apply text-white text-xl bg-[#123bfb] hover:bg-[#4361ee] !important;
+  }
+
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }

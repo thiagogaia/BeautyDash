@@ -48,7 +48,7 @@ export function InputFile({ field, value, removeOptions }: InputFileProps) {
         }
         width="150"
         height="150"
-        className="max-w-[200px] min-w-[200px] min-h-[150px] max-h-[150px] xsm:max-w-[300px] xsm:min-w-[300px] xsm:min-h-[200px] xsm:max-h-[200px] object-contain"
+        className="w-full min-h-[150px] max-h-[150px] xsm:min-h-[200px] xsm:max-h-[200px] object-contain"
         alt="Preview"
       />
       {removeOptions && (

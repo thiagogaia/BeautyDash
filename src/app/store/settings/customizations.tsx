@@ -1,8 +1,8 @@
 import { UseFormReturn } from "react-hook-form";
-import { SettingsType } from "./form-settings";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
 import { FormTextareaField } from "@/components/form-fileds/form-textarea-field";
+import { SettingsType } from "./page";
 
 interface Props {
   formData: UseFormReturn<any>;
@@ -13,7 +13,12 @@ export default function Customization({ formData, data }: Props) {
     <div className="border-b pb-12">
       <h2 className="uppercase mb-4 text-xl">Personalização</h2>
       <div className="flex flex-col gap-y-4">
-        <p className="h-32 w-32 bg-secondary/50">input file</p>
+        <FormInputField
+          formData={formData}
+          name="image"
+          type="file"
+          className="items-center xs:w-fit mb-6"
+        />
 
         <div className="flex w-full justify-between flex-wrap xs:flex-nowrap gap-y-4 gap-x-8 items-end">
           <FormInputField
@@ -46,6 +51,32 @@ export default function Customization({ formData, data }: Props) {
             disabled
             title="Uri de acesso"
             value={data.uri}
+            className="w-full xs:w-2/4"
+          />
+        </div>
+
+        {/* separar em um bloco com os campos de dendereço correto */}
+        <FormInputField
+          formData={formData}
+          name="address"
+          title="Endereço da loja"
+          placeholder="Endereço da loja"
+          className="w-full"
+        />
+
+        <div className="flex w-full justify-between flex-wrap xs:flex-nowrap gap-y-4 gap-x-8 items-end">
+          <FormInputField
+            formData={formData}
+            name="cnpj"
+            title="CNPJ da loja"
+            placeholder="CNPJ da loja"
+            className="w-full xs:w-2/4"
+          />
+          <FormInputField
+            formData={formData}
+            name="email"
+            title="Email da loja"
+            placeholder="Email da loja"
             className="w-full xs:w-2/4"
           />
         </div>
