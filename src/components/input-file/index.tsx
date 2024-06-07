@@ -1,20 +1,17 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ControllerRenderProps } from "react-hook-form";
 
 import defaultImage from "@/../public/img/upload-file-preview.png";
+import { InputFileProps } from "@/types";
 
-interface Props {
-  field: ControllerRenderProps<any, string>;
-}
-
-export function InputFile({ field }: Props) {
+export function InputFile({ field, value, removeOptions }: InputFileProps) {
   const [selectedImage, setSelectedImage] = useState<File>();
   const [inputFile, setInputFile] = useState<HTMLInputElement>();
+  const [currentValue, setCurrentValue] = useState<string>(value);
 
   const imageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -25,6 +22,7 @@ export function InputFile({ field }: Props) {
 
   const removeImage = () => {
     setSelectedImage(undefined);
+    setCurrentValue("");
 
     if (inputFile !== undefined) {
       inputFile.value = "";
@@ -41,15 +39,23 @@ export function InputFile({ field }: Props) {
         className="file:bg-secondary file:rounded-sm file:cursor-pointer file:h-full file:mr-2 p-0"
       />
       <Image
-        src={selectedImage ? URL.createObjectURL(selectedImage) : defaultImage}
-        width="0"
-        height="0"
-        className="max-w-[200px] min-w-[200px] min-h-[150px] max-h-[150px] xsm:max-w-[300px] xsm:min-w-[300px] xsm:min-h-[200px] xsm:max-h-[200px] object-contain"
+        src={
+          selectedImage
+            ? URL.createObjectURL(selectedImage)
+            : currentValue.length > 0
+            ? currentValue
+            : defaultImage
+        }
+        width="150"
+        height="150"
+        className="w-full min-h-[150px] max-h-[150px] xsm:min-h-[200px] xsm:max-h-[200px] object-contain"
         alt="Preview"
       />
-      <Button variant="destructive" type="button" onClick={removeImage}>
-        Remover Imagem
-      </Button>
+      {removeOptions && (
+        <Button variant="destructive" type="button" onClick={removeImage}>
+          Remover Imagem
+        </Button>
+      )}
     </div>
   );
 }

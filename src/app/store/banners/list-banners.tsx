@@ -1,16 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { MoreHorizontal } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import {
   Table,
   TableBody,
@@ -20,8 +10,22 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import TableCellActions from "@/components/table-cell-actions";
+import { DataType } from "./page";
 
-export function ListBanners() {
+interface Props {
+  data: DataType;
+  setCurrentTab: (e: string) => void;
+  setCurrentData: (e: DataType[number]) => void;
+  setEditData: (e: boolean) => void;
+}
+
+export function ListBanners({ data, setEditData, setCurrentData, setCurrentTab }: Props) {
+  const edit = (itemData: DataType[number]) => {
+    setCurrentTab("add");
+    setCurrentData(itemData);
+    setEditData(true);
+  };
+
   return (
     <Table className="mt-8 mb-16">
       <TableHeader className="bg-secondary/40">
@@ -33,40 +37,27 @@ export function ListBanners() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {[...new Array(6)].map((_, index) => (
-          <TableRow key={index}>
+        {data.map((item) => (
+          <TableRow key={item.id}>
             <TableCell className="w-1/4 text-left">
               <Image
-                alt="Product image"
-                className="aspect-square rounded-md object-cover"
+                className="aspect-square rounded-md max-h-[64px] object-cover"
                 height="64"
-                src="https://i.imgur.com/LMW80fm.jpg"
-                width="64"
+                src={item.imageDesktop || "https://i.imgur.com/jhryimF.jpg"}
+                alt={item.title}
+                width="100"
               />
             </TableCell>
 
             <TableCell className="w-2/6 text-center hidden xsm:table-cell font-medium">
-              <p className="truncate-vertical">
-                Título legal - Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                reiciendis doloribus, numquam sapiente at, et nobis natus explicabo reprehenderit
-                nemo veritatis blanditiis voluptatibus omnis praesentium eveniet ut, voluptatem
-                eaque? Sapiente.
-              </p>
+              <p className="truncate-vertical">{item.title}</p>
             </TableCell>
 
             <TableCell className="w-2/6 text-center hidden sm:table-cell">
-              <p className="truncate-vertical">
-                Descrição bem pensada - Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Dolorem quis enim, similique obcaecati beatae praesentium tempore nam hic inventore,
-                quo nulla labore dignissimos natus! Dolorem beatae sit asperiores libero vel!
-              </p>
+              <p className="truncate-vertical">{item.description}</p>
             </TableCell>
 
-            <TableCellActions
-              className="w-1/4 text-right"
-              setCurrentTab={() => {}}
-              setCurrentData={() => {}}
-            />
+            <TableCellActions className="w-1/4 text-right" editData={() => edit(item)} />
           </TableRow>
         ))}
       </TableBody>

@@ -75,6 +75,10 @@
     @apply bg-background text-foreground;
   }
 
+  .save-form-button {
+    @apply text-white text-xl bg-[#123bfb] hover:bg-[#4361ee] !important;
+  }
+
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }
@@ -86,5 +90,23 @@
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+  }
+
+  .input-search>.input-container>input {
+    margin: 0 !important;
+    background: transparent;
+    border: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    outline: none;
+  }
+
+  .input-search>.input-container>input:focus-visible {
+    box-shadow: none;
+    outline: none !important;
+  }
+
+  .input-search:focus-within {
+    outline: 2px solid hsl(var(--foreground));
   }
 }

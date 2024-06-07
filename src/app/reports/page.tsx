@@ -1,9 +1,4 @@
-import { Metadata } from "next";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "Relatorios",
-};
 
 export default function ReportsPage() {
   return (
