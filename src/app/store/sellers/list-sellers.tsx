@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table";
 import TableCellActions from "@/components/table-cell-actions";
 import { DataType } from "./page";
+import { maskPhone } from "@/lib/utils";
 
 interface Props {
   data: DataType;
@@ -48,7 +49,7 @@ export function ListSellers({ data, setEditData, setCurrentData, setCurrentTab }
             <TableCell className="w-1/6 text-left">{item.name}</TableCell>
 
             <TableCell className="w-1/6 text-center hidden xsm:table-cell font-medium">
-              {item.whatsapp}
+              {maskPhone(item.whatsapp)}
             </TableCell>
 
             <TableCell className="w-1/6 text-center hidden sm:table-cell">

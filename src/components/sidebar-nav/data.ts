@@ -18,6 +18,7 @@ const productsData = [
 
 const clientsData = [
   { title: "meus clientes", uri: "/clients/my-clients" },
+  { title: "Configurar clientes", uri: "/clients/setting-clients" },
   { title: "etiquetas", uri: "/clients/hang-tags" },
   { title: "oportunidades", uri: "/clients/opportunities" },
 ];

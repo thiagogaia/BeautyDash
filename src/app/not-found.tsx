@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="flex items-center justify-center px-10 h-[82vh]">
+    <div className="flex items-center justify-center w-3/4 px-10 h-[82vh]">
       <div className="hidden md:flex w-3/4 max-h-full">
         <Image
           src="/img/404.svg"

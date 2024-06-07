@@ -49,6 +49,7 @@ export function FormSellers({ currentData }: Props) {
             formData={form}
             name="whatsapp"
             title="Whatsapp"
+            type="tel"
             placeholder="Número de whatsapp"
             value={currentData.whatsapp}
           />

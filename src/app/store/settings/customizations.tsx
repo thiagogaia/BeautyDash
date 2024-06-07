@@ -32,6 +32,7 @@ export default function Customization({ formData, data }: Props) {
             formData={formData}
             name="whatsapp"
             title="Whatsapp"
+            type="tel"
             value={data.whatsapp}
             className="w-full xs:w-2/4"
           />

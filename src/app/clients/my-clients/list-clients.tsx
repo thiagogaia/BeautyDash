@@ -10,21 +10,16 @@ import {
 } from "@/components/ui/table";
 import TableCellActions from "@/components/table-cell-actions";
 
-import { cn } from "@/lib/utils";
+import { formatPrice, maskPhone } from "@/lib/utils";
 import { DataType } from "./page";
 
 interface Props {
   data: DataType;
-  setCurrentTab: (e: string) => void;
-  setCurrentData: (e: DataType[number]) => void;
-  setEditData: (e: boolean) => void;
 }
 
-export function ListClients({ data, setEditData, setCurrentData, setCurrentTab }: Props) {
-  const edit = (itemData: DataType[number]) => {
-    setCurrentTab("add");
-    setCurrentData(itemData);
-    setEditData(true);
+export function ListClients({ data }: Props) {
+  const edit = () => {
+    console.log();
   };
 
   return (
@@ -35,7 +30,7 @@ export function ListClients({ data, setEditData, setCurrentData, setCurrentTab }
           <TableHead className="w-1/6 whitespace-nowrap text-center hidden lg:table-cell">
             Email
           </TableHead>
-          <TableHead className="w-1/6 whitespace-nowrap text-center hidden md:table-cell">
+          <TableHead className="w-1/6 whitespace-nowrap text-center hidden xl:table-cell">
             Whatsapp
           </TableHead>
           <TableHead className="w-1/6 whitespace-nowrap text-center hidden xs:table-cell">
@@ -56,19 +51,19 @@ export function ListClients({ data, setEditData, setCurrentData, setCurrentTab }
               {item.email}
             </TableCell>
 
-            <TableCell className="w-1/6 text-center font-medium hidden md:table-cell">
-              {item.whatsapp}
+            <TableCell className="w-1/6 text-center font-medium hidden xl:table-cell">
+              {maskPhone(item.whatsapp)}
             </TableCell>
 
             <TableCell className="w-1/6 text-center font-medium hidden xs:table-cell">
-              {item.visits || 0}
+              {item.visits || "0/0"}
             </TableCell>
 
             <TableCell className={"w-1/6 text-center font-medium hidden xsm:table-cell"}>
-              {item.balance}
+              {formatPrice(item.balance)}
             </TableCell>
 
-            <TableCellActions className="w-1/6 text-right" editData={() => edit(item)} />
+            {/* <TableCellActions className="w-1/6 text-right" editData={() => edit(item)} /> */}
           </TableRow>
         ))}
       </TableBody>
