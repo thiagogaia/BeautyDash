@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Filters from "./filters";
 import { ListClients } from "./list-clients";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { FormClient } from "./form-client";
 
 const data = [
   {
@@ -29,9 +31,25 @@ export type DataType = typeof data;
 export type DataItemType = DataType[number];
 
 export default function MyCustomer() {
+  const [currentTab, setCurrentTab] = useState<string>("list");
+
   return (
-    <div className="mx-5 sm:mx-12 mt-6">
-      <div className="mt-6 w-full md:w-[70vw]">
+    <Tabs
+      defaultValue={currentTab}
+      value={currentTab}
+      onValueChange={setCurrentTab}
+      className=" mx-5 sm:mx-12 mt-6"
+    >
+      <TabsList className="grid w-full grid-cols-2">
+        <TabsTrigger value="list" className="capitalize">
+          Listagem
+        </TabsTrigger>
+        <TabsTrigger value="add" className="capitalize">
+          Cadastrar
+        </TabsTrigger>
+      </TabsList>
+
+      <TabsContent value="list" className="mt-6 w-full md:w-[70vw]">
         <div className="flex flex-col gap-y-4 mb-8">
           <p>Você pode bloquear o acesso à sua loja nas configuraçoes da mesma.</p>
           <p>
@@ -45,7 +63,11 @@ export default function MyCustomer() {
         <Filters />
 
         <ListClients data={data} />
-      </div>
-    </div>
+      </TabsContent>
+
+      <TabsContent value="add" className="mt-6 w-full md:w-[70vw]">
+        <FormClient />
+      </TabsContent>
+    </Tabs>
   );
 }

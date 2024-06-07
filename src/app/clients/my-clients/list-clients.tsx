@@ -19,7 +19,10 @@ interface Props {
 
 export function ListClients({ data }: Props) {
   const edit = () => {
-    console.log();
+    console.log("edit");
+  };
+  const remove = () => {
+    console.log("remove");
   };
 
   return (
@@ -63,7 +66,7 @@ export function ListClients({ data }: Props) {
               {formatPrice(item.balance)}
             </TableCell>
 
-            {/* <TableCellActions className="w-1/6 text-right" editData={() => edit(item)} /> */}
+            <TableCellActions className="w-1/6 text-right" editData={edit} exclude={remove} />
           </TableRow>
         ))}
       </TableBody>

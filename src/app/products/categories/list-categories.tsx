@@ -26,6 +26,8 @@ export function ListCategories({ data, setEditData, setCurrentData, setCurrentTa
     setEditData(true);
   };
 
+  const remove = () => console.log("remove cell");
+
   return (
     <Table className="mt-8 mb-16">
       <TableHeader className="bg-secondary/40">
@@ -60,7 +62,11 @@ export function ListCategories({ data, setEditData, setCurrentData, setCurrentTa
               </span>
             </TableCell>
 
-            <TableCellActions className="w-1/4 text-right" editData={() => edit(item)} />
+            <TableCellActions
+              className="w-1/4 text-right"
+              editData={() => edit(item)}
+              exclude={remove}
+            />
           </TableRow>
         ))}
       </TableBody>

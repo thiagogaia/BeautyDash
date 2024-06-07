@@ -26,6 +26,8 @@ export function ListSellers({ data, setEditData, setCurrentData, setCurrentTab }
     setEditData(true);
   };
 
+  const remove = () => console.log("remove cell");
+
   return (
     <Table className="mt-8 mb-16">
       <TableHeader className="bg-secondary/40">
@@ -60,7 +62,11 @@ export function ListSellers({ data, setEditData, setCurrentData, setCurrentTab }
               {item.ordersReceived || 0}
             </TableCell>
 
-            <TableCellActions className="w-1/6 text-right" editData={() => edit(item)} />
+            <TableCellActions
+              className="w-1/6 text-right"
+              editData={() => edit(item)}
+              exclude={remove}
+            />
           </TableRow>
         ))}
       </TableBody>

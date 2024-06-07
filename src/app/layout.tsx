@@ -15,18 +15,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <Providers>
-        <body
-          className={cn("min-h-screen bg-background font-sans antialiased", fontSans.className)}
-        >
+      <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
+        <Providers>
           <Header />
           <main className="flex flex-col md:flex-row">
             <SidebarNav />
             {children}
           </main>
           <Footer />
-        </body>
-      </Providers>
+        </Providers>
+      </body>
     </html>
   );
 }
