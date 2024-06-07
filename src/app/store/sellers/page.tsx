@@ -54,16 +54,15 @@ export default function Sellers() {
           <div className="flex flex-col gap-y-4 mb-8">
             <p>
               Seu link de atendimento é:{" "}
-              <span className="text-[#069]">https://nuzap.com.br/link/exemplo</span>
+              <span className="text-blue-400">https://nuzap.com.br/link/exemplo</span>
             </p>
             <p>
               Esse link irá gerar atendimentos inteligentes para cada vendedor cadastrado, ou seja,
               o vendedor com menor número de atendimentos irá receber o Lead.
             </p>
             <p>
-              Caso em &quot;Configurações &gt; Minha loja&quot; esteja marcado &quot;Selecionar
-              Vendedor(a)&quot; então no checkout o cliente poderá selecionar o vendedor para ser
-              enviado o pedido.
+              Caso em &quot;Configurações&quot; esteja marcado &quot;Selecionar Vendedor(a)&quot;
+              então no checkout o cliente poderá selecionar o vendedor para ser enviado o pedido.
             </p>
             <p>
               Além disso, cada vendedor cadastrado irá ter acesso à suas próprias vendas feitas na
