@@ -19,3 +19,9 @@ export interface FormSelectFieldProps extends InputType, FormFieldProps {
 }
 
 export interface FormTextareaFieldProps extends TextareaType, FormFieldProps {}
+
+export interface FormSwitchFieldProps extends FormFieldProps {
+  name: string;
+  className?: string;
+  value?: boolean;
+}

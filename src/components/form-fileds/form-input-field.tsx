@@ -34,6 +34,7 @@ export function FormInputField({
               <Input
                 {...props}
                 {...field}
+                type={type}
                 defaultValue={value || ""}
                 className="disabled:bg-secondary disabled:text-primary/70 disabled:opacity-1"
               />
