@@ -3,9 +3,9 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { useState } from "react";
-import { ListSellers } from "./list-sellers";
-import { FormSellers } from "./form-sellers";
 import Filters from "@/components/filters";
+import { ListSellers } from "./components/list-sellers";
+import { FormSellers } from "./components/form-sellers";
 
 const data = [
   {

@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { FormBanners } from "./form-banners";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ListBanners } from "./list-banners";
+
 import Filters from "@/components/filters";
+import { ListBanners } from "./components/list-banners";
+import { FormBanners } from "./components/form-banners";
 
 const data = [
   {

@@ -2,12 +2,12 @@
 
 import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
-import Customization from "./customizations";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formSettingsSchema } from "@/schemas/store";
+import Customization from "./components/customizations";
 
 const data = {
   name: "loujinha",

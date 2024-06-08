@@ -2,8 +2,8 @@
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
-import { ListHangTags } from "./list-hang-tags";
-import { FormHangTags } from "./form-hang-tags";
+import { ListHangTags } from "./components/list-hang-tags";
+import { FormHangTags } from "./components/form-hang-tags";
 import Filters from "@/components/filters";
 
 const data = [

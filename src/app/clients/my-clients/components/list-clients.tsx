@@ -11,7 +11,7 @@ import {
 import TableCellActions from "@/components/table-cell-actions";
 
 import { formatPrice, maskPhone } from "@/lib/utils";
-import { DataType } from "./page";
+import { DataType } from "../page";
 
 interface Props {
   data: DataType;

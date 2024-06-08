@@ -38,7 +38,6 @@ export function FormInputField({
                 type={type}
                 value={type === "tel" ? maskPhone(field.value || "") : field.value}
                 onChange={field.onChange}
-                defaultValue={value || ""}
                 className="disabled:bg-secondary disabled:text-primary/70 disabled:opacity-1"
               />
             )}
