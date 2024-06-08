@@ -17,10 +17,8 @@ export default function MobileNav({ className, ...props }: React.HTMLAttributes<
   return (
     <div className="2xs:hidden">
       <Sheet>
-        <SheetTrigger>
-          <Button variant="ghost" className="p-0 hover:bg-transparent">
-            <Menu />
-          </Button>
+        <SheetTrigger className="py-2">
+          <Menu />
         </SheetTrigger>
 
         <SheetContent className="pt-20 pl-12 w-3/4 xs:w-2/4">

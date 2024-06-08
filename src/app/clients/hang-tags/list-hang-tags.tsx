@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/table";
 import TableCellActions from "@/components/table-cell-actions";
 import { DataType } from "./page";
-import { maskPhone } from "@/lib/utils";
 
 interface Props {
   data: DataType;
@@ -19,7 +18,7 @@ interface Props {
   setEditData: (e: boolean) => void;
 }
 
-export function ListSellers({ data, setEditData, setCurrentData, setCurrentTab }: Props) {
+export function ListHangTags({ data, setEditData, setCurrentData, setCurrentTab }: Props) {
   const edit = (itemData: DataType[number]) => {
     setCurrentTab("add");
     setCurrentData(itemData);
@@ -33,33 +32,19 @@ export function ListSellers({ data, setEditData, setCurrentData, setCurrentTab }
       <TableHeader className="bg-secondary/40">
         <TableRow>
           <TableHead className="w-1/6 whitespace-nowrap text-left">Nome</TableHead>
-          <TableHead className="w-1/6 whitespace-nowrap text-center hidden xsm:table-cell">
-            Whatsapp
-          </TableHead>
-          <TableHead className="w-1/6 whitespace-nowrap text-center hidden sm:table-cell">
-            Atendimentos
-          </TableHead>
-          <TableHead className="w-1/6 whitespace-nowrap text-center hidden sm:table-cell">
-            Pedidos Recebidos
-          </TableHead>
           <TableHead className="w-1/6 text-right">Ação</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {data.map((item) => (
           <TableRow key={item.id}>
-            <TableCell className="w-1/6 text-left">{item.name}</TableCell>
-
-            <TableCell className="w-1/6 text-center hidden xsm:table-cell font-medium">
-              {maskPhone(item.whatsapp)}
-            </TableCell>
-
-            <TableCell className="w-1/6 text-center hidden sm:table-cell">
-              {item.services || 0}
-            </TableCell>
-
-            <TableCell className="w-1/6 text-center hidden sm:table-cell">
-              {item.ordersReceived || 0}
+            <TableCell className="w-1/6 text-left">
+              <span
+                className={"p-2 rounded-md font-medium text-white cursor-default"}
+                style={{ background: item.color }}
+              >
+                {item.name}
+              </span>
             </TableCell>
 
             <TableCellActions

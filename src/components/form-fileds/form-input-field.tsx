@@ -4,6 +4,7 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 import { Input } from "@/components/ui/input";
 import { InputFile } from "../input-file";
 import { FormInputFieldProps } from "@/types/form";
+import { maskPhone } from "@/lib/utils";
 
 export function FormInputField({
   formData,
@@ -35,6 +36,8 @@ export function FormInputField({
                 {...props}
                 {...field}
                 type={type}
+                value={type === "tel" ? maskPhone(field.value || "") : field.value}
+                onChange={field.onChange}
                 defaultValue={value || ""}
                 className="disabled:bg-secondary disabled:text-primary/70 disabled:opacity-1"
               />

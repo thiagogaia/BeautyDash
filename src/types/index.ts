@@ -1,7 +1,8 @@
 import { ControllerRenderProps } from "react-hook-form";
 
 export interface TablleCellProps {
-  editData: () => void;
+  editData?: () => void;
+  exclude?: () => void;
   className?: string;
 }
 
