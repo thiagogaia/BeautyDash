@@ -31,7 +31,7 @@ export function FormClient() {
           <FormInputField formData={form} name="email" title="Email" placeholder="Email" />
           <FormInputField formData={form} name="whatsapp" title="Whatsapp" placeholder="Whatsapp" />
 
-          <FormSwitchField formData={form} name="active" title="Ativar CLiente" />
+          <FormSwitchField formData={form} name="active" title="Ativar CLiente" value={true} />
 
           <Button type="submit" className="w-full h-12 save-form-button">
             Salvar

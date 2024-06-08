@@ -29,7 +29,7 @@ export default function SidebarNav({ className, ...props }: React.HTMLAttributes
           href={item.uri}
           className={cn(
             "border-transparent py-2 px-3 border-b-4 whitespace-nowrap hover:cursor-pointer md:whitespace-normal md:py-3 md:px-8 md:border-l-4 md:border-b-0 hover:bg-foreground/10 hover:border-foreground/50",
-            pathname === item.uri ? "bg-foreground/10 border-foreground/50" : "bg-transparent"
+            pathname.includes(item.uri) ? "bg-foreground/10 border-foreground/50" : "bg-transparent"
           )}
         >
           {item.title}
