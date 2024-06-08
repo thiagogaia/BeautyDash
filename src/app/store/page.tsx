@@ -1,13 +1,5 @@
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Loja",
-};
+import NotFound from "../not-found";
 
 export default function StorePage() {
-  return (
-    <div>
-      <div>home</div>
-    </div>
-  );
+  return <NotFound />;
 }

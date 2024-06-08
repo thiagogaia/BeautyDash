@@ -8,11 +8,6 @@ export const formBannerSchema = z.object({
   finalDate: z.date(),
 });
 
-export const filterSchema = z.object({
-  initialDate: z.date().optional(),
-  finalDate: z.date().optional(),
-});
-
 export const formSellerSchema = z.object({
   name: z.string().min(3),
   whatsapp: z.string().min(5),

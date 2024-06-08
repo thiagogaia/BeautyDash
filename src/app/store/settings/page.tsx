@@ -7,7 +7,7 @@ import Customization from "./customizations";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { formSettingsSchema } from "../schemas";
+import { formSettingsSchema } from "@/schemas/store";
 
 const data = {
   name: "loujinha",

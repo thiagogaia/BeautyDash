@@ -9,7 +9,7 @@ import { z } from "zod";
 
 import { DataType } from "./page";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
-import { formHangTagsSchema } from "../schemas";
+import { formHangTagsSchema } from "@/schemas/clients";
 
 interface Props {
   currentData: DataType[number];

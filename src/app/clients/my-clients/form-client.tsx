@@ -8,8 +8,7 @@ import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { formClientSchema } from "../schemas";
+import { formClientSchema } from "@/schemas/clients";
 
 export function FormClient() {
   const form = useForm<z.infer<typeof formClientSchema>>({

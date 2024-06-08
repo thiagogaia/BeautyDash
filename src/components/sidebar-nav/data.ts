@@ -1,5 +1,5 @@
 const storeData = [
-  { title: "home", uri: "/store" },
+  { title: "home", uri: "/store/home" },
   { title: "banners", uri: "/store/banners" },
   { title: "configurações", uri: "/store/settings" },
   { title: "vendedores", uri: "/store/sellers" },

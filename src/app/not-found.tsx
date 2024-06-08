@@ -24,7 +24,7 @@ export default function NotFound() {
           Mas não se preocupe, você pode encontrar muitas outras coisas em nossa página inicial.
         </span>
         <div className="flex gap-4 flex-wrap justify-center sm:justify-start items-center mt-4">
-          <Link href="/store" className="py-2 px-4">
+          <Link href="/store/home" className="py-2 px-4">
             voltar para o início
           </Link>
         </div>

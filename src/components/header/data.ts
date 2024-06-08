@@ -2,7 +2,7 @@
 export default [
   {
     title: "Loja",
-    uri: "store",
+    uri: "store/home",
   },
   {
     title: "Produtos",

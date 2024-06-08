@@ -1,10 +1,10 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Filters from "./filters";
 import { ListCategories } from "./list-categories";
 import { useState } from "react";
 import { FormCategory } from "./form-category";
+import Filters from "@/components/filters";
 
 const data = [
   {

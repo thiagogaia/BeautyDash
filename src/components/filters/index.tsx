@@ -1,16 +1,16 @@
 "use client";
 
 import { z } from "zod";
-import { Form } from "../../../components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Button } from "../../../components/ui/button";
 import { Database, Search } from "lucide-react";
-import { Separator } from "../../../components/ui/separator";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormDateField } from "@/components/form-fileds/form-data-field";
 import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
-import { filterSchema } from "../schemas";
+import { filterSchema } from "@/schemas";
+import { Form } from "../ui/form";
+import { Separator } from "../ui/separator";
+import { Button } from "../ui/button";
 
 export default function Filters() {
   const form = useForm<z.infer<typeof filterSchema>>({

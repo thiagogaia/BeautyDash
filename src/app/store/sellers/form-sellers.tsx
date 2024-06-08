@@ -7,9 +7,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { formSellerSchema } from "../schemas";
 import { DataType } from "./page";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
+import { formSellerSchema } from "@/schemas/store";
 
 interface Props {
   currentData: DataType[number];

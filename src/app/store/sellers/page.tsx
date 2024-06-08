@@ -1,10 +1,11 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Filters from "./filters";
+
 import { useState } from "react";
 import { ListSellers } from "./list-sellers";
 import { FormSellers } from "./form-sellers";
+import Filters from "@/components/filters";
 
 const data = [
   {
