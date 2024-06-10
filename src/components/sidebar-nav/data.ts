@@ -38,6 +38,12 @@ const toolsData = [
   { title: "conexões", uri: "/tools/connections" },
 ];
 
+const profileData = [
+  { title: "meus dados", uri: "/profile/my-data" },
+  { title: "minhas lojas", uri: "/profile/my-stores" },
+  { title: "alterar senha", uri: "/profile/edit-password" },
+];
+
 export type SidebarNavTypes =
   | "storeData"
   | "productsData"
@@ -45,4 +51,11 @@ export type SidebarNavTypes =
   | "reportsData"
   | "toolsData";
 
-export const sidebarNavItems = { storeData, productsData, clientsData, reportsData, toolsData };
+export const sidebarNavItems = {
+  storeData,
+  productsData,
+  clientsData,
+  reportsData,
+  toolsData,
+  profileData,
+};
