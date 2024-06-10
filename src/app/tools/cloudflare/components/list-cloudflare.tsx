@@ -19,7 +19,7 @@ interface Props {
   setEditData: (e: boolean) => void;
 }
 
-export function ListCategories({ data, setEditData, setCurrentData, setCurrentTab }: Props) {
+export function ListCloudflare({ data, setEditData, setCurrentData, setCurrentTab }: Props) {
   const edit = (itemData: DataType[number]) => {
     setCurrentTab("add");
     setCurrentData(itemData);
@@ -32,10 +32,7 @@ export function ListCategories({ data, setEditData, setCurrentData, setCurrentTa
     <Table className="mt-8 mb-16">
       <TableHeader className="bg-secondary/40">
         <TableRow>
-          <TableHead className="w-1/4 whitespace-nowrap text-left">Nome</TableHead>
-          <TableHead className="w-1/4 whitespace-nowrap text-center hidden sm:table-cell">
-            Ordem
-          </TableHead>
+          <TableHead className="w-1/4 whitespace-nowrap text-left">Conta</TableHead>
           <TableHead className="w-1/4 whitespace-nowrap text-center hidden xsm:table-cell">
             Status
           </TableHead>
@@ -45,11 +42,7 @@ export function ListCategories({ data, setEditData, setCurrentData, setCurrentTa
       <TableBody>
         {data.map((item) => (
           <TableRow key={item.id}>
-            <TableCell className="w-1/4 text-left">{item.name}</TableCell>
-
-            <TableCell className="w-1/4 text-center hidden sm:table-cell font-medium">
-              {item.order}
-            </TableCell>
+            <TableCell className="w-1/4 text-left">{item.account}</TableCell>
 
             <TableCell className={"w-1/4 text-center hidden xsm:table-cell"}>
               <span

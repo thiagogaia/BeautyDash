@@ -7,3 +7,8 @@ export const formWhatsappRouterSchema = z.object({
   message: z.string().optional(),
   link: z.string(),
 });
+
+export const formCloudflareSchema = z.object({
+  account: z.string(),
+  key: z.string(),
+});
