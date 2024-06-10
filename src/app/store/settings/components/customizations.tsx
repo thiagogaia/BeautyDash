@@ -2,7 +2,8 @@ import { UseFormReturn } from "react-hook-form";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
 import { FormTextareaField } from "@/components/form-fileds/form-textarea-field";
-import { SettingsType } from "./page";
+import { SettingsType } from "../page";
+import { maskPhone } from "@/lib/utils";
 
 interface Props {
   formData: UseFormReturn<any>;
@@ -32,7 +33,9 @@ export default function Customization({ formData, data }: Props) {
             formData={formData}
             name="whatsapp"
             title="Whatsapp"
-            type="tel"
+            format={maskPhone}
+            maxLength={15}
+            autoComplete="off"
             value={data.whatsapp}
             className="w-full xs:w-2/4"
           />

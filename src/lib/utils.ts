@@ -23,3 +23,7 @@ export function maskPhone(value: string) {
     .replace(/(\d{5})(\d)/, "$1-$2")
     .replace(/(-\d{4})(\d+?)$/, "$1");
 }
+
+export function replaceWhiteSpace(value: string, char: string = "-") {
+  return value.replaceAll(" ", char);
+}

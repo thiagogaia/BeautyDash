@@ -4,7 +4,7 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/comp
 import { Input } from "@/components/ui/input";
 import { InputFile } from "../input-file";
 import { FormInputFieldProps } from "@/types/form";
-import { maskPhone } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 
 export function FormInputField({
   formData,
@@ -13,6 +13,8 @@ export function FormInputField({
   type = "text",
   className,
   value,
+  format,
+  inputClass,
   removeOptions = true,
   ...props
 }: FormInputFieldProps) {
@@ -22,7 +24,7 @@ export function FormInputField({
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          <FormLabel className="flex items-center gap-x-1 break-all">{title}</FormLabel>
+          {title && <FormLabel className="flex items-center gap-x-1 break-all">{title}</FormLabel>}
           <FormControl>
             {type === "file" ? (
               <InputFile
@@ -36,9 +38,12 @@ export function FormInputField({
                 {...props}
                 {...field}
                 type={type}
-                value={type === "tel" ? maskPhone(field.value || "") : field.value}
+                value={format ? format(field.value || "") : field.value}
                 onChange={field.onChange}
-                className="disabled:bg-secondary disabled:text-primary/70 disabled:opacity-1"
+                className={cn(
+                  "disabled:bg-secondary disabled:text-primary/70 disabled:opacity-1",
+                  inputClass
+                )}
               />
             )}
           </FormControl>

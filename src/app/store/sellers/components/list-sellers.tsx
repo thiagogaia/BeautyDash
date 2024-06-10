@@ -9,7 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import TableCellActions from "@/components/table-cell-actions";
-import { DataType } from "./page";
+import { DataType } from "../page";
 import { maskPhone } from "@/lib/utils";
 
 interface Props {

@@ -7,9 +7,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { DataType } from "./page";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { formSellerSchema } from "@/schemas/store";
+import { DataType } from "../page";
+import { maskPhone } from "@/lib/utils";
 
 interface Props {
   currentData: DataType[number];
@@ -49,7 +50,9 @@ export function FormSellers({ currentData }: Props) {
             formData={form}
             name="whatsapp"
             title="Whatsapp"
-            type="tel"
+            format={maskPhone}
+            maxLength={15}
+            autoComplete="off"
             placeholder="Número de whatsapp"
             value={currentData.whatsapp}
           />

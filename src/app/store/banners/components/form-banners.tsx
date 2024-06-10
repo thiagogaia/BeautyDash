@@ -7,10 +7,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { DataType } from "./page";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormDateField } from "@/components/form-fileds/form-data-field";
 import { formBannerSchema } from "@/schemas/store";
+import { DataType } from "../page";
 
 interface Props {
   currentData: DataType[number];

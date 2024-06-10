@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { DataType } from "./page";
+import { DataType } from "../page";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormSwitchField } from "@/components/form-fileds/form-switch-field";
 import { formCategorySchema } from "@/schemas/products";

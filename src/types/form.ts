@@ -12,6 +12,8 @@ export interface FormDataFieldProps extends InputType, FormFieldProps {}
 
 export interface FormInputFieldProps extends InputType, FormFieldProps {
   removeOptions?: boolean;
+  format?: (e: string) => string;
+  inputClass?: string;
 }
 
 export interface FormSelectFieldProps extends InputType, FormFieldProps {
