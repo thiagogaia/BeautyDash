@@ -18,8 +18,9 @@ export default function EditFunction() {
 
   return (
     <div className="mx-5 sm:mx-12 my-8 w-[70vw]">
+      <h2 className="uppercase text-xl mb-6">Editar senha</h2>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 w-full">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 max-w-full xs:ml-8">
           <FormPasswordField
             formData={form}
             name="currentPassword"

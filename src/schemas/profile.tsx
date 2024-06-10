@@ -10,3 +10,10 @@ export const formEditPasswordSchema = z
     message: "As senhas devem ser iguais",
     path: ["confirmPassword"],
   });
+
+export const formMyStoreSchema = z.object({
+  name: z.string(),
+  whatsapp: z.string(),
+  category: z.string(),
+  url: z.string(),
+});
