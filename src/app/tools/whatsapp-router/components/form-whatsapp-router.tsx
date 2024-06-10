@@ -79,7 +79,7 @@ export function FormWhatsappRouter() {
             </div>
           </div>
 
-          <Button type="submit" className="w-full h-12 save-form-button">
+          <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Gerar Link
           </Button>
         </form>

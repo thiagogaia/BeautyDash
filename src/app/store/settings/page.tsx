@@ -36,7 +36,7 @@ export default function Settings() {
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
               <Customization formData={form} data={data} />
 
-              <Button type="submit" className="w-full h-12 save-form-button">
+              <Button type="submit" className="w-full h-12 save-form-button text-xl">
                 Salvar
               </Button>
             </form>

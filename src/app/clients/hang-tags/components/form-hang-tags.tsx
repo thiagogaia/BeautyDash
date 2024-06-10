@@ -46,7 +46,7 @@ export function FormHangTags({ currentData }: Props) {
             value={currentData.color}
           />
 
-          <Button type="submit" className="w-full h-12 save-form-button">
+          <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar
           </Button>
         </form>

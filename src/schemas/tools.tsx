@@ -12,3 +12,7 @@ export const formCloudflareSchema = z.object({
   account: z.string(),
   key: z.string(),
 });
+
+export const formEncryptedTextSchema = z.object({
+  text: z.string(),
+});

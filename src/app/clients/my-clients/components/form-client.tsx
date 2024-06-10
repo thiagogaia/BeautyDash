@@ -41,7 +41,7 @@ export function FormClient() {
 
           <FormSwitchField formData={form} name="active" title="Ativar CLiente" value={true} />
 
-          <Button type="submit" className="w-full h-12 save-form-button">
+          <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar
           </Button>
         </form>
