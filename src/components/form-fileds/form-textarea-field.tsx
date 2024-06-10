@@ -17,7 +17,7 @@ export function FormTextareaField({
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          <FormLabel>{title}</FormLabel>
+          <FormLabel className="text-primary/50">{title}</FormLabel>
           <FormControl>
             <Textarea
               placeholder="Tell us a little bit about yourself"

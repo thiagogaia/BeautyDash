@@ -4,16 +4,20 @@ import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
 import { FormTextareaField } from "@/components/form-fileds/form-textarea-field";
 import { SettingsType } from "../page";
 import { maskPhone } from "@/lib/utils";
+import { FormSwitchField } from "@/components/form-fileds/form-switch-field";
+import { Button } from "@/components/ui/button";
+import { TooltipAlert } from "@/components/tooltip-alert";
 
 interface Props {
   formData: UseFormReturn<any>;
   data: SettingsType;
 }
+
 export default function Customization({ formData, data }: Props) {
   return (
     <div className="border-b pb-12">
-      <h2 className="uppercase mb-4 text-xl">Personalização</h2>
-      <div className="flex flex-col gap-y-4">
+      <h2 className="uppercase mb-6 text-xl">PERSONALIZAÇÃO</h2>
+      <div className="flex flex-col gap-y-4 xs:ml-8">
         <FormInputField
           formData={formData}
           name="image"
@@ -55,6 +59,7 @@ export default function Customization({ formData, data }: Props) {
             disabled
             title="Uri de acesso"
             value={data.uri}
+            placeholder={data.uri}
             className="w-full xs:w-2/4"
           />
         </div>
@@ -105,6 +110,20 @@ export default function Customization({ formData, data }: Props) {
           title="Selecionar Tema da Loja"
           data={["valor 1", "valor 2", "valor 3"]}
         />
+
+        <div className="flex items-top gap-x-16 gap-y-8 flex-wrap">
+          <div>
+            <FormSwitchField formData={formData} name="blockStore" title="Bloquear Loja" />
+            <Button className="save-form-button mt-4">Configurar</Button>
+          </div>
+          <FormSwitchField formData={formData} name="blockAccess" title="Bloquear acesso" />
+          <FormSwitchField formData={formData} name="blockPrice" title="Bloquear preços" />
+
+          <div className="relative">
+            <TooltipAlert text="Mostrar na Loja Produtos Sem Imagem." />
+            <FormSwitchField formData={formData} name="noImage" title="Sem imagem" />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -24,7 +24,11 @@ export function FormInputField({
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          {title && <FormLabel className="flex items-center gap-x-1 break-all">{title}</FormLabel>}
+          {title && (
+            <FormLabel className="flex items-center gap-x-1 break-all text-primary/50">
+              {title}
+            </FormLabel>
+          )}
           <FormControl>
             {type === "file" ? (
               <InputFile

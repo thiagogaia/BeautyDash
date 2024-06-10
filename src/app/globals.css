@@ -79,6 +79,15 @@
     @apply text-white bg-[#123bfb] hover:bg-[#4361ee] !important;
   }
 
+  .radio-group-checked {
+    border-color: #0072bc !important;
+  }
+
+  .radio-group-checked>span>svg {
+    fill: #0072bc;
+    color: #0072bc;
+  }
+
   .hide-scrollbar::-webkit-scrollbar {
     display: none;
   }

@@ -1,4 +1,4 @@
-import { UseFormReturn } from "react-hook-form";
+import { ControllerRenderProps, UseFormReturn } from "react-hook-form";
 
 export type InputType = React.InputHTMLAttributes<HTMLInputElement>;
 export type TextareaType = React.TextareaHTMLAttributes<HTMLTextAreaElement>;
@@ -26,4 +26,10 @@ export interface FormSwitchFieldProps extends FormFieldProps {
   name: string;
   className?: string;
   value?: boolean;
+}
+export interface FormRadioGroupItemProps {
+  field: ControllerRenderProps<any, string>;
+  value: string;
+  label: string;
+  alertText?: string;
 }

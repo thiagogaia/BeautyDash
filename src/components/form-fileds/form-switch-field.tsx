@@ -16,7 +16,7 @@ export function FormSwitchField({
       render={({ field }) => (
         <FormItem className={className}>
           <div className="space-y-0.5">
-            <FormLabel>{title}</FormLabel>
+            <FormLabel className="text-primary/50">{title}</FormLabel>
           </div>
           <FormControl>
             <Switch

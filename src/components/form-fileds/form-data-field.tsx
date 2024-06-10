@@ -25,7 +25,9 @@ export function FormDateField({
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          <FormLabel className="flex items-center gap-x-1 break-all">{title}</FormLabel>
+          <FormLabel className="flex items-center gap-x-1 break-all text-primary/50">
+            {title}
+          </FormLabel>
           <Popover>
             <PopoverTrigger asChild>
               <FormControl>
