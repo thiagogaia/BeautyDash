@@ -10,7 +10,7 @@ import { z } from "zod";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { maskPhone } from "@/lib/utils";
 import { formMyStoreSchema } from "@/schemas/profile";
-import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
+import { FormSelectField } from "@/components/form-fileds/form-sellect-field";
 
 export function FormStore() {
   const form = useForm<z.infer<typeof formMyStoreSchema>>({
@@ -24,7 +24,7 @@ export function FormStore() {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <FormInputField formData={form} name="name" title="Nome" placeholder="Nome e sobrenome" />
-          <FormSellectField
+          <FormSelectField
             formData={form}
             name="category"
             title="Ramo de atividade"

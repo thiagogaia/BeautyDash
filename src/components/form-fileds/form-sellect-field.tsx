@@ -4,7 +4,7 @@ import { FormSelectFieldProps } from "@/types/form";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
-export function FormSellectField({
+export function FormSelectField({
   formData,
   defaultValue,
   title,

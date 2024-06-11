@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Database, Search } from "lucide-react";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormDateField } from "@/components/form-fileds/form-data-field";
-import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
+import { FormSelectField } from "@/components/form-fileds/form-sellect-field";
 import { filterSchema } from "@/schemas";
 import { Form } from "../ui/form";
 import { Separator } from "../ui/separator";
@@ -34,7 +34,7 @@ export default function Filters() {
             />
           </div>
 
-          <FormSellectField
+          <FormSelectField
             formData={form}
             placeholder="20"
             defaultValue="20"

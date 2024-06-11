@@ -17,3 +17,9 @@ export const formMyStoreSchema = z.object({
   category: z.string(),
   url: z.string(),
 });
+
+export const formMyDataSchema = z.object({
+  name: z.string(),
+  phone: z.string(),
+  email: z.string().optional(),
+});

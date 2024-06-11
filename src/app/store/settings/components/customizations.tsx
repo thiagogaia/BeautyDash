@@ -1,6 +1,6 @@
 import { UseFormReturn } from "react-hook-form";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
-import { FormSellectField } from "@/components/form-fileds/form-sellect-field";
+import { FormSelectField } from "@/components/form-fileds/form-sellect-field";
 import { FormTextareaField } from "@/components/form-fileds/form-textarea-field";
 import { SettingsType } from "../page";
 import { maskPhone } from "@/lib/utils";
@@ -46,7 +46,7 @@ export default function Customization({ formData, data }: Props) {
         </div>
 
         <div className="flex w-full justify-between flex-wrap xs:flex-nowrap gap-y-4 gap-x-8 items-end">
-          <FormSellectField
+          <FormSelectField
             formData={formData}
             name="branch"
             title="Ramo"
@@ -97,14 +97,14 @@ export default function Customization({ formData, data }: Props) {
           placeholder="Descrição da sua loja"
         />
 
-        <FormSellectField
+        <FormSelectField
           formData={formData}
           name="order"
           title="Ordem de exibição dos produtos"
           data={["valor 1", "valor 2", "valor 3", "valor 4", "valor 5"]}
         />
 
-        <FormSellectField
+        <FormSelectField
           formData={formData}
           name="theme"
           title="Selecionar Tema da Loja"
