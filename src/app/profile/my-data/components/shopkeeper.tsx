@@ -32,6 +32,7 @@ export function Shoopkeeper({ data, formData }: Props) {
             placeholder="Número do seu telefone"
             format={maskPhone}
             maxLength={15}
+            autoComplete="off"
             value={data.phone}
             className="w-full xs:w-2/4"
           />

@@ -16,3 +16,11 @@ export const formCloudflareSchema = z.object({
 export const formEncryptedTextSchema = z.object({
   text: z.string(),
 });
+
+export const formDomainSchema = z.object({
+  name: z.string(),
+  cloudflareAccount: z.string(),
+  domain: z.string(),
+  subdomain: z.string(),
+  actionType: z.string(),
+});
