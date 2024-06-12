@@ -76,7 +76,12 @@
   }
 
   .save-form-button {
-    @apply text-white bg-[#123bfb] hover:bg-[#4361ee] !important;
+    color: white !important;
+    background-color: #123bfb !important;
+  }
+
+  .save-form-button:hover {
+    background-color: #4361ee !important;
   }
 
   .radio-group-checked {
