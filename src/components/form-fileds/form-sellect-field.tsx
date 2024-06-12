@@ -4,7 +4,7 @@ import { FormSelectFieldProps } from "@/types/form";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 
-export function FormSellectField({
+export function FormSelectField({
   formData,
   defaultValue,
   title,
@@ -19,7 +19,7 @@ export function FormSellectField({
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          <FormLabel>{title}</FormLabel>
+          <FormLabel className="text-primary/50">{title}</FormLabel>
           <Select onValueChange={field.onChange} defaultValue={field.value || defaultValue}>
             <FormControl>
               <SelectTrigger>
