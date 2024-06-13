@@ -12,10 +12,21 @@ import { formClientSchema } from "@/schemas/clients";
 import { maskPhone } from "@/lib/utils";
 import { AddressFields } from "@/components/address-fields";
 import { Separator } from "@/components/ui/separator";
+import { DataType } from "../page";
 
-export function FormClient() {
+interface Props {
+  currentData: DataType[number];
+}
+
+export function FormClient({ currentData }: Props) {
   const form = useForm<z.infer<typeof formClientSchema>>({
     resolver: zodResolver(formClientSchema),
+    defaultValues: {
+      name: currentData.name || undefined,
+      email: currentData.email || undefined,
+      whatsapp: currentData.whatsapp || undefined,
+      active: currentData.active || true,
+    },
   });
 
   const onSubmit = (values: z.infer<typeof formClientSchema>) => console.log(values);
@@ -27,10 +38,17 @@ export function FormClient() {
           <FormInputField
             formData={form}
             name="name"
-            title="Nome da categoria"
+            title="Nome e sobrenome"
             placeholder="Nome e sobrenome"
+            value={currentData.name}
           />
-          <FormInputField formData={form} name="email" title="Email" placeholder="Email" />
+          <FormInputField
+            formData={form}
+            name="email"
+            title="Email"
+            placeholder="Email"
+            value={currentData.email}
+          />
           <FormInputField
             formData={form}
             name="whatsapp"
@@ -39,12 +57,19 @@ export function FormClient() {
             autoComplete="off"
             title="Whatsapp"
             placeholder="Whatsapp"
+            value={currentData.whatsapp}
           />
 
-          <FormSwitchField formData={form} name="active" title="Ativar CLiente" value={true} />
+          <FormSwitchField
+            formData={form}
+            name="active"
+            title="Ativar CLiente"
+            value={currentData.active}
+          />
 
           <Separator className="my-4" />
           <AddressFields formData={form} data={{}} />
+          <Separator className="py-4 invisible" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

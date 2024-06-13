@@ -31,7 +31,9 @@ export type DataType = typeof data;
 export type DataItemType = DataType[number];
 
 export default function MyCustomer() {
+  const [editData, setEditData] = useState<boolean>(false);
   const [currentTab, setCurrentTab] = useState<string>("list");
+  const [currentData, setCurrentData] = useState<DataItemType>({} as DataItemType);
 
   return (
     <Tabs
@@ -41,11 +43,11 @@ export default function MyCustomer() {
       className=" mx-5 sm:mx-12 mt-6"
     >
       <TabsList className="grid w-full grid-cols-2">
-        <TabsTrigger value="list" className="capitalize">
+        <TabsTrigger value="list" className="capitalize" onClick={() => setEditData(false)}>
           Listagem
         </TabsTrigger>
         <TabsTrigger value="add" className="capitalize">
-          Cadastrar
+          Cadastrar / Editar
         </TabsTrigger>
       </TabsList>
 
@@ -62,11 +64,16 @@ export default function MyCustomer() {
 
         <Filters />
 
-        <ListClients data={data} />
+        <ListClients
+          data={data}
+          setEditData={setEditData}
+          setCurrentTab={setCurrentTab}
+          setCurrentData={setCurrentData}
+        />
       </TabsContent>
 
       <TabsContent value="add" className="mt-6 w-full md:w-[70vw]">
-        <FormClient />
+        <FormClient currentData={editData ? currentData : ({} as DataItemType)} />
       </TabsContent>
     </Tabs>
   );
