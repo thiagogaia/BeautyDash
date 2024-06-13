@@ -6,17 +6,17 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 import defaultImage from "@/../public/img/upload-file-preview.png";
-import { InputFileProps } from "@/types";
+import { InputImageFileProps } from "@/types";
 
-export function InputFile({ field, value, removeOptions }: InputFileProps) {
+export function InputImageFile({ field, value, removeOptions }: InputImageFileProps) {
   const [selectedImage, setSelectedImage] = useState<File>();
-  const [inputFile, setInputFile] = useState<HTMLInputElement>();
+  const [InputImageFile, setInputImageFile] = useState<HTMLInputElement>();
   const [currentValue, setCurrentValue] = useState<string>(value);
 
   const imageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
       setSelectedImage(e.target.files[0]);
-      setInputFile(e.target);
+      setInputImageFile(e.target);
     }
   };
 
@@ -24,8 +24,8 @@ export function InputFile({ field, value, removeOptions }: InputFileProps) {
     setSelectedImage(undefined);
     setCurrentValue("");
 
-    if (inputFile !== undefined) {
-      inputFile.value = "";
+    if (InputImageFile !== undefined) {
+      InputImageFile.value = "";
     }
   };
 

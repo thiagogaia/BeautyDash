@@ -2,9 +2,9 @@
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { InputFile } from "../input-file";
 import { FormInputFieldProps } from "@/types/form";
 import { cn } from "@/lib/utils";
+import { InputImageFile } from "../input-image-file";
 
 export function FormInputField({
   formData,
@@ -31,7 +31,7 @@ export function FormInputField({
           )}
           <FormControl>
             {type === "file" ? (
-              <InputFile
+              <InputImageFile
                 field={field}
                 {...field}
                 value={(value as string) || ""}

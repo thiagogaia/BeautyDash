@@ -18,3 +18,8 @@ export const formSettingsSchema = z.object({
   name: z.string().min(3),
   whatsapp: z.string().min(5),
 });
+
+export const formImportDataSchema = z.object({
+  type: z.string().default("Produtos"),
+  file: z.string(),
+});

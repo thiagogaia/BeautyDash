@@ -6,7 +6,7 @@ export interface TablleCellProps {
   className?: string;
 }
 
-export interface InputFileProps {
+export interface InputImageFileProps {
   field: ControllerRenderProps<any, string>;
   value: string;
   removeOptions: boolean;
