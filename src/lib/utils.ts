@@ -10,7 +10,7 @@ export function formatPrice(
   language: string = "pt-BR",
   currency: string = "BRL"
 ) {
-  return Number(value).toLocaleString(language, {
+  return (Number(String(value).replace(/\D/g, "")) / 100).toLocaleString(language, {
     style: "currency",
     currency: currency,
   });
