@@ -19,7 +19,7 @@ export default function PaymentsForm() {
   return (
     <div className="mt-6 w-full md:w-[70vw] pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="border-b pb-12">
             <h2 className="uppercase mb-6 text-xl">
               SELECIONE E CONFIGURE AS FORMAS DE PAGAMENTO ACEITOS EM SUA LOJA.

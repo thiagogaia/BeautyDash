@@ -51,6 +51,7 @@ export function InputImageFile({ field, value, removeOptions }: InputImageFilePr
         className="w-full min-h-[150px] max-h-[150px] xsm:min-h-[200px] xsm:max-h-[200px] object-contain"
         alt="Preview"
       />
+
       {removeOptions && (
         <Button variant="destructive" type="button" onClick={removeImage}>
           Remover Imagem

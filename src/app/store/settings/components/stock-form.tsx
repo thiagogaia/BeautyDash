@@ -19,7 +19,7 @@ export default function StockForm() {
   return (
     <div className="mt-6 w-full md:w-[70vw] pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <h2 className="uppercase mb-6 text-xl">ESTOQUE</h2>
           <div className="flex flex-wrap gap-x-16 gap-y-8 xs:ml-8">
             <div className="w-full">

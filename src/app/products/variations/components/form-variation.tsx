@@ -30,7 +30,7 @@ export function FormVariation({ currentData }: Props) {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormSelectField
             formData={form}
             name="type"

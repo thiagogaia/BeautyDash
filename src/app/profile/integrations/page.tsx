@@ -65,7 +65,7 @@ export default function Integrations() {
       </div>
       <div className="pb-12">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             {activeForms.includes("pix") && <Pix formData={form} data={data} />}
             {activeForms.includes("picpay") && <PicPay formData={form} data={data} />}
             {activeForms.includes("mercado pago") && <MercadoPago formData={form} data={data} />}

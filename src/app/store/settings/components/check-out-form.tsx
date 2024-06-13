@@ -19,7 +19,7 @@ export default function CheckOutForm() {
   return (
     <div className="mt-6 w-full md:w-[70vw] pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <h2 className="uppercase mb-6 text-xl">CHECKOUT</h2>
           <div className="space-y-6 xs:ml-8">
             <div className="flex items-top gap-8 flex-wrap">

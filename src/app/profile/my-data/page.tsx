@@ -40,7 +40,7 @@ export default function MyData() {
       <div className="w-full md:w-[70vw]">
         <div className="pb-12">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
               <h2 className="uppercase mb-6 text-xl">{userName} - LOJISTA</h2>
               <div className="flex flex-col gap-y-6 xs:ml-8">
                 <FormInputField
@@ -48,6 +48,7 @@ export default function MyData() {
                   name="image"
                   type="file"
                   title="Fotode perfil"
+                  removeOptions={false}
                   className="items-center xs:w-fit mb-6"
                 />
                 <FormInputField

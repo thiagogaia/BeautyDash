@@ -23,7 +23,7 @@ export function FormStore() {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormInputField formData={form} name="name" title="Nome" placeholder="Nome e sobrenome" />
           <FormSelectField
             formData={form}

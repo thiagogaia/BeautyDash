@@ -19,7 +19,7 @@ export default function IntegrationsForm() {
   return (
     <div className="mt-6 w-full md:w-[70vw] pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <h2 className="uppercase mb-6 text-xl">
             INTEGRAÇÕES - OTIMIZE OS RESULTADOS DOS SEUS ANÚNCIOS.
           </h2>

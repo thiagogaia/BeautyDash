@@ -19,7 +19,7 @@ export function FormSelectField({
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          <FormLabel className="text-primary/50">{title}</FormLabel>
+          <FormLabel className="text-primary/50 break-all">{title}</FormLabel>
           <Select onValueChange={field.onChange} defaultValue={field.value || defaultValue}>
             <FormControl>
               <SelectTrigger>

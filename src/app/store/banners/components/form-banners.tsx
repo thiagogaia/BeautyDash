@@ -34,12 +34,13 @@ export function FormBanners({ currentData }: Props) {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div className="flex justify-center 2xs:justify-between flex-wrap gap-y-8">
             <FormInputField
               formData={form}
               name="fileDesktop"
               type="file"
+              removeOptions={false}
               title="Desktop: (1920X700px)"
               className="max-w-[200px] min-w-[200px] xsm:max-w-[300px] xsm:min-w-[300px]"
               value={currentData.imageDesktop}
@@ -48,6 +49,7 @@ export function FormBanners({ currentData }: Props) {
               formData={form}
               name="fileMobile"
               type="file"
+              removeOptions={false}
               title="Mobile: (500X735px)"
               className="max-w-[200px] min-w-[200px] xsm:max-w-[300px] xsm:min-w-[300px]"
               value={currentData.imageMobile}

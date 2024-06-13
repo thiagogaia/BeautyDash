@@ -34,7 +34,7 @@ export default function ImportData() {
     <div className="mx-5 sm:mx-12 mt-6">
       <div className="w-full md:w-[70vw]">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormSelectField
               formData={form}
               name="type"

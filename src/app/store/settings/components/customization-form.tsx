@@ -28,13 +28,14 @@ export default function CustomizationForm() {
   return (
     <div className="mt-6 w-full md:w-[70vw] pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <h2 className="uppercase mb-6 text-xl">PERSONALIZAÇÃO</h2>
           <div className="flex flex-col gap-y-4 xs:ml-8">
             <FormInputField
               formData={form}
               name="image"
               type="file"
+              removeOptions={false}
               className="items-center xs:w-fit mb-6"
             />
 

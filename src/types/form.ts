@@ -33,3 +33,5 @@ export interface FormRadioGroupItemProps {
   label: string;
   alertText?: string;
 }
+
+export interface FormCheckboxFieldProps extends InputType, FormFieldProps {}
