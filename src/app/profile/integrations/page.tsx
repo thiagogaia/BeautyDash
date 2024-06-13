@@ -47,7 +47,7 @@ export default function Integrations() {
   return (
     <div className="mx-5 sm:mx-12 mt-6">
       <div className="w-full md:w-[70vw]">
-        <h2 className="mb-8 text-xl">Selecione os campos de integrações desejados</h2>
+        <h2 className="mb-8 text-xl">Selecione os campos desejados</h2>
         <ul className="flex flex-wrap gap-x-12 gap-y-4 mb-12">
           {formNames.map((formName) => (
             <div key={formName} className="flex items-center space-x-2">
