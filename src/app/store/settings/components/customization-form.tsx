@@ -15,6 +15,7 @@ import { Form } from "@/components/ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSettingsSchema } from "@/schemas/store";
+import { Separator } from "@/components/ui/separator";
 
 export default function CustomizationForm() {
   const form = useForm<z.infer<typeof formSettingsSchema>>({
@@ -75,7 +76,9 @@ export default function CustomizationForm() {
               />
             </div>
 
+            <Separator className="my-4" />
             <AddressFields formData={form} data={{}} />
+            <Separator className="my-4" />
 
             <div className="flex w-full justify-between flex-wrap xs:flex-nowrap gap-y-4 gap-x-8 items-end">
               <FormInputField

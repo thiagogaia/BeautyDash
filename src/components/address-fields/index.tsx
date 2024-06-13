@@ -11,8 +11,8 @@ interface Props {
 
 export function AddressFields({ data, formData }: Props) {
   return (
-    <div className="space-y-6 border-y py-8 my-4">
-      <h2>Endereço</h2>
+    <div className="space-y-6">
+      <h2 className="text-xl">Endereço</h2>
       <FormInputField
         formData={formData}
         name="cep"

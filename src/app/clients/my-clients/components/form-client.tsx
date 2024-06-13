@@ -11,6 +11,7 @@ import { z } from "zod";
 import { formClientSchema } from "@/schemas/clients";
 import { maskPhone } from "@/lib/utils";
 import { AddressFields } from "@/components/address-fields";
+import { Separator } from "@/components/ui/separator";
 
 export function FormClient() {
   const form = useForm<z.infer<typeof formClientSchema>>({
@@ -22,7 +23,7 @@ export function FormClient() {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormInputField
             formData={form}
             name="name"
@@ -40,9 +41,10 @@ export function FormClient() {
             placeholder="Whatsapp"
           />
 
-          <AddressFields formData={form} data={{}} />
-
           <FormSwitchField formData={form} name="active" title="Ativar CLiente" value={true} />
+
+          <Separator className="my-4" />
+          <AddressFields formData={form} data={{}} />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

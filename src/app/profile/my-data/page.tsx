@@ -11,6 +11,7 @@ import { maskPhone } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { Separator } from "@/components/ui/separator";
 
 const data = {
   name: "loujinha",
@@ -80,6 +81,8 @@ export default function MyData() {
                     className="w-full xs:w-2/4"
                   />
                 </div>
+
+                <Separator className="my-4" />
 
                 <AddressFields formData={form} data={data} />
               </div>
