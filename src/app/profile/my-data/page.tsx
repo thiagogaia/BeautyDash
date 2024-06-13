@@ -35,8 +35,8 @@ export default function MyData() {
   const userName = "Jorge Silva";
 
   return (
-    <div className=" mx-5 sm:mx-12 mt-6">
-      <div className="mt-6 w-full md:w-[70vw]">
+    <div className="mx-5 sm:mx-12 mt-6">
+      <div className="w-full md:w-[70vw]">
         <div className="pb-12">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">

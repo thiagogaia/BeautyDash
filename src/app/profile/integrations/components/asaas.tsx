@@ -10,7 +10,7 @@ interface Props {
 
 export function Asaas({ data, formData }: Props) {
   return (
-    <div className="pb-12">
+    <div>
       <h2 className="uppercase mb-6 text-xl">Asaas</h2>
       <div className="flex flex-col gap-y-4 xs:ml-8">
         <FormSelectField
