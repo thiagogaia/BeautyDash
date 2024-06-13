@@ -34,7 +34,7 @@ export default function ImportData() {
     <div className="mx-5 sm:mx-12 mt-6">
       <div className="w-full md:w-[70vw]">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             <FormSelectField
               formData={form}
               name="type"
@@ -65,7 +65,7 @@ export default function ImportData() {
               )}
             />
 
-            <div>
+            <div className="text-blue-400">
               {currentType === "Produtos" && (
                 <a
                   href="https://storage.ktalogue.com.br/uploads/1/importar_produtos_nuzap.xlsx"

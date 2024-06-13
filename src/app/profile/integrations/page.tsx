@@ -65,13 +65,13 @@ export default function Integrations() {
       </div>
       <div className="pb-12">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
             {activeForms.includes("pix") && <Pix formData={form} data={data} />}
             {activeForms.includes("picpay") && <PicPay formData={form} data={data} />}
             {activeForms.includes("mercado pago") && <MercadoPago formData={form} data={data} />}
             {activeForms.includes("monetizze") && <Monetizze formData={form} data={data} />}
             {activeForms.includes("asaas") && <Asaas formData={form} data={data} />}
-            <Separator className="invisible" />
+            <Separator className="invisible py-2" />
 
             <Button type="submit" className="w-full h-12 save-form-button text-xl">
               Salvar

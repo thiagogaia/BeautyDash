@@ -11,7 +11,7 @@ interface Props {
 
 export function FormExternalUrl({ currentData, formData }: Props) {
   return (
-    <div className="space-y-8 pt-4">
+    <div className="space-y-4 pt-4">
       <div className="space-y-4 pb-8 border-b">
         <FormInputField
           formData={formData}
@@ -71,7 +71,7 @@ export function FormExternalUrl({ currentData, formData }: Props) {
           />
         </div>
       </div>
-      <div className="pb-8">
+      <div>
         <h3 className="font-medium text-lg mb-2">Outros</h3>
         <div className="flex w-full justify-between flex-wrap xs:flex-nowrap gap-y-4 gap-x-8 items-end">
           <FormInputField

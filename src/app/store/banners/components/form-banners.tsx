@@ -11,6 +11,7 @@ import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormDateField } from "@/components/form-fileds/form-data-field";
 import { formBannerSchema } from "@/schemas/store";
 import { DataType } from "../page";
+import { Separator } from "@/components/ui/separator";
 
 interface Props {
   currentData: DataType[number];
@@ -33,7 +34,7 @@ export function FormBanners({ currentData }: Props) {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="flex justify-center 2xs:justify-between flex-wrap gap-y-8">
             <FormInputField
               formData={form}
@@ -90,6 +91,8 @@ export function FormBanners({ currentData }: Props) {
               value={currentData.finalDate}
             />
           </div>
+
+          <Separator className="invisible py-2" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

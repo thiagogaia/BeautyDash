@@ -10,6 +10,7 @@ import { z } from "zod";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { formSellerSchema } from "@/schemas/store";
 import { DataType } from "../page";
+import { Separator } from "@/components/ui/separator";
 
 interface Props {
   currentData: DataType[number];
@@ -25,7 +26,7 @@ export function FormConection({ currentData }: Props) {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormInputField
             formData={form}
             name="name"
@@ -34,6 +35,8 @@ export function FormConection({ currentData }: Props) {
             placeholder="exemplo-1718280450"
             value="exemplo-1718280450"
           />
+
+          <Separator className="invisible py-2" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

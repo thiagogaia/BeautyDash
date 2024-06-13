@@ -7,6 +7,7 @@ import { Form } from "@/components/ui/form";
 import { formSettingsSchema } from "@/schemas/store";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Separator } from "@/components/ui/separator";
 
 export default function IntegrationsForm() {
   const form = useForm<z.infer<typeof formSettingsSchema>>({
@@ -18,7 +19,7 @@ export default function IntegrationsForm() {
   return (
     <div className="mt-6 w-full md:w-[70vw] pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <h2 className="uppercase mb-6 text-xl">
             INTEGRAÇÕES - OTIMIZE OS RESULTADOS DOS SEUS ANÚNCIOS.
           </h2>
@@ -72,6 +73,9 @@ export default function IntegrationsForm() {
               <Button className="save-form-button mt-2">Configurar</Button>
             </div>
           </div>
+
+          <Separator className="invisible py-2" />
+
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar
           </Button>

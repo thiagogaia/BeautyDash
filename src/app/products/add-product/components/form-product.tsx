@@ -9,22 +9,13 @@ import { z } from "zod";
 
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { formSellerSchema } from "@/schemas/store";
-import { DataType } from "../page";
-import { maskPhone } from "@/lib/utils";
-import { Separator } from "@/components/ui/separator";
 
-interface Props {
-  currentData: DataType[number];
-}
+import { formatPrice } from "@/lib/utils";
+import { FormTextareaField } from "@/components/form-fileds/form-textarea-field";
 
-export function FormSellers({ currentData }: Props) {
+export function FormProduct() {
   const form = useForm<z.infer<typeof formSellerSchema>>({
     resolver: zodResolver(formSellerSchema),
-    defaultValues: {
-      name: currentData.name || undefined,
-      whatsapp: currentData.whatsapp || undefined,
-      email: currentData.email || undefined,
-    },
   });
 
   const onSubmit = (values: z.infer<typeof formSellerSchema>) => console.log(values);
@@ -36,29 +27,23 @@ export function FormSellers({ currentData }: Props) {
           <FormInputField
             formData={form}
             name="name"
-            title="Nome"
-            placeholder="Nome e sobrenome"
-            value={currentData.name}
+            title="Nome do produto"
+            placeholder="Nome do produto"
           />
           <FormInputField
             formData={form}
-            name="email"
-            title="Email"
-            placeholder="Endereço de email"
-            value={currentData.email}
-          />
-          <FormInputField
-            formData={form}
-            name="whatsapp"
-            title="Whatsapp"
-            format={maskPhone}
-            maxLength={15}
-            autoComplete="off"
-            placeholder="Número de whatsapp"
-            value={currentData.whatsapp}
+            name="price"
+            title="preço"
+            format={formatPrice}
+            placeholder="Preço"
           />
 
-          <Separator className="invisible py-2" />
+          <FormTextareaField
+            formData={form}
+            name="descripton"
+            title="Descrição do produto"
+            placeholder="Descrição do produto"
+          />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

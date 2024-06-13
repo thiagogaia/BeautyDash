@@ -7,6 +7,7 @@ import { Form } from "@/components/ui/form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSettingsSchema } from "@/schemas/store";
 import { z } from "zod";
+import { Separator } from "@/components/ui/separator";
 
 export default function PaymentsForm() {
   const form = useForm<z.infer<typeof formSettingsSchema>>({
@@ -18,7 +19,7 @@ export default function PaymentsForm() {
   return (
     <div className="mt-6 w-full md:w-[70vw] pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="border-b pb-12">
             <h2 className="uppercase mb-6 text-xl">
               SELECIONE E CONFIGURE AS FORMAS DE PAGAMENTO ACEITOS EM SUA LOJA.
@@ -59,6 +60,8 @@ export default function PaymentsForm() {
               </div>
             </div>
           </div>
+
+          <Separator className="invisible py-2" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

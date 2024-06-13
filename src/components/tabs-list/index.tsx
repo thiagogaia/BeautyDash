@@ -14,7 +14,7 @@ export function TabsList({ currentTab, setCurrentTab, tabs }: Props) {
           key={tab}
           onClick={() => setCurrentTab(tab)}
           className={cn(
-            "flex items-center justify-center gap-x-4 w-full py-2 px-4 rounded-md text-primary/50 cursor-pointer whitespace-nowrap capitalize",
+            "flex items-center justify-center gap-x-4 w-full py-1 px-4 rounded-md text-primary/50 cursor-pointer whitespace-nowrap capitalize",
             currentTab === tab && "bg-background text-primary"
           )}
         >

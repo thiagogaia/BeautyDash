@@ -5,6 +5,7 @@ import { Form } from "@/components/ui/form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { formSettingsSchema } from "@/schemas/store";
+import { Separator } from "@/components/ui/separator";
 
 export default function LinksForm() {
   const form = useForm<z.infer<typeof formSettingsSchema>>({
@@ -16,7 +17,7 @@ export default function LinksForm() {
   return (
     <div className="mt-6 w-full md:w-[70vw] pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <h2 className="uppercase mb-6 text-xl">LINK DAS REDES SOCIAIS</h2>
           <div className="flex flex-col gap-y-4 xs:ml-8">
             <div className="flex w-full justify-between flex-wrap xs:flex-nowrap gap-y-4 gap-x-8 items-end">
@@ -57,6 +58,9 @@ export default function LinksForm() {
               />
             </div>
           </div>
+
+          <Separator className="invisible py-2" />
+
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar
           </Button>

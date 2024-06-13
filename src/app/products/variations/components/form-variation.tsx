@@ -11,6 +11,7 @@ import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { DataType } from "../page";
 import { formVariationSchema } from "@/schemas/products";
 import { FormSelectField } from "@/components/form-fileds/form-sellect-field";
+import { Separator } from "@/components/ui/separator";
 
 interface Props {
   currentData: DataType[number];
@@ -29,7 +30,7 @@ export function FormVariation({ currentData }: Props) {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormSelectField
             formData={form}
             name="type"
@@ -52,6 +53,8 @@ export function FormVariation({ currentData }: Props) {
             placeholder="Nome"
             value={currentData.name}
           />
+
+          <Separator className="invisible py-2" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

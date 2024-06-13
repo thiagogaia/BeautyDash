@@ -40,7 +40,7 @@ export default function MyData() {
       <div className="w-full md:w-[70vw]">
         <div className="pb-12">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
               <h2 className="uppercase mb-6 text-xl">{userName} - LOJISTA</h2>
               <div className="flex flex-col gap-y-6 xs:ml-8">
                 <FormInputField
@@ -86,6 +86,8 @@ export default function MyData() {
 
                 <AddressFields formData={form} data={data} />
               </div>
+
+              <Separator className="invisible py-2" />
 
               <Button type="submit" className="w-full h-12 save-form-button text-xl">
                 Salvar
