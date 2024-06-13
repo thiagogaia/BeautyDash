@@ -1,5 +1,7 @@
 "use client";
 
+import { PageInConstruction } from "@/components/page-in-construction";
+
 export default function Tasks() {
-  return <div>componente tarefas</div>;
+  return <PageInConstruction />;
 }

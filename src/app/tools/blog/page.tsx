@@ -1,5 +1,7 @@
 "use client";
 
+import { PageInConstruction } from "@/components/page-in-construction";
+
 export default function Blog() {
-  return <div>componente blog</div>;
+  return <PageInConstruction />;
 }

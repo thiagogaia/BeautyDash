@@ -1,5 +1,7 @@
 "use client";
 
+import { PageInConstruction } from "@/components/page-in-construction";
+
 export default function MyProducts() {
-  return <div>componente meus produtos</div>;
+  return <PageInConstruction />;
 }
