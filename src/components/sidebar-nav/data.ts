@@ -42,6 +42,7 @@ const profileData = [
   { title: "meus dados", uri: "/profile/my-data" },
   { title: "minhas lojas", uri: "/profile/my-stores" },
   { title: "alterar senha", uri: "/profile/edit-password" },
+  { title: "Integrações", uri: "/profile/integrations" },
 ];
 
 export type SidebarNavTypes =

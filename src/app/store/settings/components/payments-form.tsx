@@ -1,7 +1,6 @@
 "use client";
 
-import { UseFormReturn, useForm } from "react-hook-form";
-import { SettingsType } from "../page";
+import { useForm } from "react-hook-form";
 import { FormSwitchField } from "@/components/form-fileds/form-switch-field";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
@@ -9,12 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { formSettingsSchema } from "@/schemas/store";
 import { z } from "zod";
 
-interface Props {
-  formData: UseFormReturn<any>;
-  data: SettingsType;
-}
-
-export default function PaymentsForm({ data, formData }: Props) {
+export default function PaymentsForm() {
   const form = useForm<z.infer<typeof formSettingsSchema>>({
     resolver: zodResolver(formSettingsSchema),
     defaultValues: {},
@@ -34,11 +28,11 @@ export default function PaymentsForm({ data, formData }: Props) {
                 <p>PIX</p>
                 <Button className="save-form-button mt-2">Cadastrar PIX</Button>
               </div>
-              <FormSwitchField formData={formData} name="ticket" title="Boleto" />
-              <FormSwitchField formData={formData} name="creditCard" title="Cartão de Crédito" />
-              <FormSwitchField formData={formData} name="debitCard" title="Cartão de Débito" />
-              <FormSwitchField formData={formData} name="storeBalance" title="Saldo Loja" />
-              <FormSwitchField formData={formData} name="money" title="Dinheiro" />
+              <FormSwitchField formData={form} name="ticket" title="Boleto" />
+              <FormSwitchField formData={form} name="creditCard" title="Cartão de Crédito" />
+              <FormSwitchField formData={form} name="debitCard" title="Cartão de Débito" />
+              <FormSwitchField formData={form} name="storeBalance" title="Saldo Loja" />
+              <FormSwitchField formData={form} name="money" title="Dinheiro" />
             </div>
           </div>
 
@@ -48,19 +42,19 @@ export default function PaymentsForm({ data, formData }: Props) {
             </h2>
             <div className="flex flex-wrap gap-x-16 gap-y-8 xs:ml-8">
               <div>
-                <FormSwitchField formData={formData} name="picPay" title="PicPay" />
+                <FormSwitchField formData={form} name="picPay" title="PicPay" />
                 <Button className="save-form-button mt-2">Configurar</Button>
               </div>
               <div>
-                <FormSwitchField formData={formData} name="mercadoPago" title="MercadoPago" />
+                <FormSwitchField formData={form} name="mercadoPago" title="MercadoPago" />
                 <Button className="save-form-button mt-2">Configurar</Button>
               </div>
               <div>
-                <FormSwitchField formData={formData} name="monetizze" title="Monetizze" />
+                <FormSwitchField formData={form} name="monetizze" title="Monetizze" />
                 <Button className="save-form-button mt-2">Configurar</Button>
               </div>
               <div>
-                <FormSwitchField formData={formData} name="asaas" title="Asaas" />
+                <FormSwitchField formData={form} name="asaas" title="Asaas" />
                 <Button className="save-form-button mt-2">Configurar</Button>
               </div>
             </div>

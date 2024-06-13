@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { formClientSchema } from "@/schemas/clients";
 import { maskPhone } from "@/lib/utils";
+import { AddressFields } from "@/components/address-fields";
 
 export function FormClient() {
   const form = useForm<z.infer<typeof formClientSchema>>({
@@ -38,6 +39,8 @@ export function FormClient() {
             title="Whatsapp"
             placeholder="Whatsapp"
           />
+
+          <AddressFields formData={form} data={{}} />
 
           <FormSwitchField formData={form} name="active" title="Ativar CLiente" value={true} />
 

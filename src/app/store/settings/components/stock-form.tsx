@@ -1,5 +1,4 @@
 import { UseFormReturn, useForm } from "react-hook-form";
-import { SettingsType } from "../page";
 import { FormSwitchField } from "@/components/form-fileds/form-switch-field";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { RadioGroup } from "@/components/ui/radio-group";
@@ -9,16 +8,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { formSettingsSchema } from "@/schemas/store";
 import { Button } from "@/components/ui/button";
 
-interface Props {
-  formData: UseFormReturn<any>;
-  data: SettingsType;
-}
-
-export default function StockForm({ data, formData }: Props) {
+export default function StockForm() {
   const form = useForm<z.infer<typeof formSettingsSchema>>({
     resolver: zodResolver(formSettingsSchema),
     defaultValues: {},
-  });
+  }) as UseFormReturn<any>;
 
   const onSubmit = (values: z.infer<typeof formSettingsSchema>) => console.log(values);
   return (
@@ -29,7 +23,7 @@ export default function StockForm({ data, formData }: Props) {
           <div className="flex flex-wrap gap-x-16 gap-y-8 xs:ml-8">
             <div className="w-full">
               <FormField
-                control={formData.control}
+                control={form.control}
                 name={"noName0" as string}
                 render={({ field }) => (
                   <FormItem>
@@ -67,13 +61,13 @@ export default function StockForm({ data, formData }: Props) {
 
             <div className="flex flex-col items-top gap-8 xs:flex-row">
               <FormSwitchField
-                formData={formData}
+                formData={form}
                 name="noName1"
                 className="w-full xs:w-1/2"
                 title="Não permitir pedido com estoque igual a 0 (zero) ou negativo."
               />
               <FormSwitchField
-                formData={formData}
+                formData={form}
                 name="noName2"
                 className="w-full xs:w-1/2"
                 title="Não exibir produtos com estoque igual a 0 (zero) ou negativo."
@@ -81,20 +75,20 @@ export default function StockForm({ data, formData }: Props) {
             </div>
             <div className="flex flex-col items-top gap-8 xs:flex-row">
               <FormSwitchField
-                formData={formData}
+                formData={form}
                 name="noName3"
                 className="w-full xs:w-1/2"
                 title="Mudar o produto para inativo quando o estoque atingir 0 (zero) ou negativo."
               />
               <FormSwitchField
-                formData={formData}
+                formData={form}
                 name="noName4"
                 className="w-full xs:w-1/2"
                 title="Exibir a quantidade disponível de estoque na loja."
               />
             </div>
             <FormSwitchField
-              formData={formData}
+              formData={form}
               name="noName5"
               className="w-full xs:w-1/2"
               title="Separar estoque ao adicionar no carrinho de compras."

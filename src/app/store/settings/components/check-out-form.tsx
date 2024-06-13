@@ -1,7 +1,6 @@
 "use client";
 
-import { UseFormReturn, useForm } from "react-hook-form";
-import { SettingsType } from "../page";
+import { useForm } from "react-hook-form";
 import { FormSwitchField } from "@/components/form-fileds/form-switch-field";
 import { Button } from "@/components/ui/button";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,12 +8,7 @@ import { z } from "zod";
 import { formSettingsSchema } from "@/schemas/store";
 import { Form } from "@/components/ui/form";
 
-interface Props {
-  formData: UseFormReturn<any>;
-  data: SettingsType;
-}
-
-export default function CheckOutForm({ data, formData }: Props) {
+export default function CheckOutForm() {
   const form = useForm<z.infer<typeof formSettingsSchema>>({
     resolver: zodResolver(formSettingsSchema),
     defaultValues: {},
@@ -28,18 +22,14 @@ export default function CheckOutForm({ data, formData }: Props) {
           <h2 className="uppercase mb-6 text-xl">CHECKOUT</h2>
           <div className="space-y-6 xs:ml-8">
             <div className="flex items-top gap-8 flex-wrap">
-              <FormSwitchField formData={formData} name="requestAddress" title="Pedir Endereço" />
-              <FormSwitchField formData={formData} name="cpf-cnpj" title="Pedir CPF/CNPJ" />
-              <FormSwitchField
-                formData={formData}
-                name="selectSeller"
-                title="Selecionar Vendedor(a)"
-              />
+              <FormSwitchField formData={form} name="requestAddress" title="Pedir Endereço" />
+              <FormSwitchField formData={form} name="cpf-cnpj" title="Pedir CPF/CNPJ" />
+              <FormSwitchField formData={form} name="selectSeller" title="Selecionar Vendedor(a)" />
             </div>
             <div>
               <h3 className="font-medium text-lg">Pedido via whatsapp</h3>
               <FormSwitchField
-                formData={formData}
+                formData={form}
                 name="submitOrder"
                 title="Enviar Pedido ao finalizar"
               />
@@ -48,16 +38,16 @@ export default function CheckOutForm({ data, formData }: Props) {
               <h3 className="font-medium text-lg">Formas de envio</h3>
 
               <div className="flex flex-wrap items-top gap-8">
-                <FormSwitchField formData={formData} name="delivery" title="Entrega" />
-                <FormSwitchField formData={formData} name="withdrawal" title="Retirada" />
-                <FormSwitchField formData={formData} name="combined" title="A Combinar" />
+                <FormSwitchField formData={form} name="delivery" title="Entrega" />
+                <FormSwitchField formData={form} name="withdrawal" title="Retirada" />
+                <FormSwitchField formData={form} name="combined" title="A Combinar" />
               </div>
             </div>
 
             <div>
               <h3 className="font-medium text-lg">Taxa de Entrega</h3>
               <FormSwitchField
-                formData={formData}
+                formData={form}
                 name="calculateDeliveryFee"
                 title="Calcular Taxa de Entrega"
               />

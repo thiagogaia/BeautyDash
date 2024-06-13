@@ -23,7 +23,7 @@ export function FormPasswordField({
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          <FormLabel>{title}</FormLabel>
+          <FormLabel className="text-primary/50">{title}</FormLabel>
           <FormControl>
             <div className="relative">
               <Input

@@ -2,13 +2,6 @@
 
 import { useState } from "react";
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { formSettingsSchema } from "@/schemas/store";
-
-import { Form } from "@/components/ui/form";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent } from "@/components/ui/tabs";
 
 import CustomizationForm from "./components/customization-form";
@@ -30,16 +23,6 @@ export type SettingsType = typeof data;
 export default function Settings() {
   const [currentTab, setCurrentTab] = useState<string>("personalizar");
 
-  const form = useForm<z.infer<typeof formSettingsSchema>>({
-    resolver: zodResolver(formSettingsSchema),
-    defaultValues: {
-      name: data.name || undefined,
-      whatsapp: data.whatsapp || undefined,
-    },
-  });
-
-  const onSubmit = (values: z.infer<typeof formSettingsSchema>) => console.log(values);
-
   return (
     <Tabs
       defaultValue={currentTab}
@@ -54,33 +37,22 @@ export default function Settings() {
       />
 
       <TabsContent value="personalizar" className="mt-6 w-full md:w-[70vw]">
-        <CustomizationForm formData={form} data={data} />
+        <CustomizationForm />
       </TabsContent>
       <TabsContent value="pagamento" className="mt-6 w-full md:w-[70vw]">
-        <PaymentsForm formData={form} data={data} />
+        <PaymentsForm />
       </TabsContent>
       <TabsContent value="checkout" className="mt-6 w-full md:w-[70vw]">
-        <CheckOutForm formData={form} data={data} />
+        <CheckOutForm />
       </TabsContent>
       <TabsContent value="integrações" className="mt-6 w-full md:w-[70vw]">
-        <IntegrationsForm formData={form} data={data} />
+        <IntegrationsForm />
       </TabsContent>
       <TabsContent value="estoque" className="mt-6 w-full md:w-[70vw]">
-        <StockForm formData={form} data={data} />
+        <StockForm />
       </TabsContent>
       <TabsContent value="links" className="mt-6 w-full md:w-[70vw]">
-        <LinksForm formData={form} data={data} />
-      </TabsContent>
-      <TabsContent value="add" className="mt-6 w-full md:w-[70vw]">
-        <div className="mt-6 w-full md:w-[70vw] pb-12">
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <Button type="submit" className="w-full h-12 save-form-button text-xl">
-                Salvar
-              </Button>
-            </form>
-          </Form>
-        </div>
+        <LinksForm />
       </TabsContent>
     </Tabs>
   );

@@ -1,5 +1,6 @@
-import { UseFormReturn, useForm } from "react-hook-form";
-import { SettingsType } from "../page";
+"use client";
+
+import { useForm } from "react-hook-form";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
@@ -7,12 +8,7 @@ import { formSettingsSchema } from "@/schemas/store";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-interface Props {
-  formData: UseFormReturn<any>;
-  data: SettingsType;
-}
-
-export default function IntegrationsForm({ data, formData }: Props) {
+export default function IntegrationsForm() {
   const form = useForm<z.infer<typeof formSettingsSchema>>({
     resolver: zodResolver(formSettingsSchema),
     defaultValues: {},
@@ -33,7 +29,7 @@ export default function IntegrationsForm({ data, formData }: Props) {
                 do Nuzap.
               </p>
               <FormInputField
-                formData={formData}
+                formData={form}
                 name="facebookPixel"
                 title="Identificação do pixel"
                 placeholder="Ex: 784939827722"
@@ -44,7 +40,7 @@ export default function IntegrationsForm({ data, formData }: Props) {
                 Insira a ID de acompanhamento de sua propriedade do Google Analytics
               </p>
               <FormInputField
-                formData={formData}
+                formData={form}
                 name="googleAnalytics"
                 title="Google Analytics - Insira a ID de acompanhamento de sua propriedade do Google Analytics"
                 placeholder="Ex: G-XPQ221231"
@@ -55,7 +51,7 @@ export default function IntegrationsForm({ data, formData }: Props) {
                 Insira a ID de acompanhamento de sua propriedade do Google TagManager
               </p>
               <FormInputField
-                formData={formData}
+                formData={form}
                 name="tagManager"
                 title="Google TagManager - Insira a ID de acompanhamento de sua propriedade do Google TagManager"
                 placeholder="Ex: GTM-XXXXXXX"
@@ -63,7 +59,7 @@ export default function IntegrationsForm({ data, formData }: Props) {
             </div>
 
             <FormInputField
-              formData={formData}
+              formData={form}
               name="widget"
               title="Widget Whatsapp"
               className="w-full"

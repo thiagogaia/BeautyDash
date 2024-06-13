@@ -52,17 +52,25 @@ export function FormBanners({ currentData }: Props) {
               value={currentData.imageMobile}
             />
           </div>
-          <FormInputField formData={form} name="title" title="Titulo" value={currentData.title} />
+          <FormInputField
+            formData={form}
+            name="title"
+            title="Titulo"
+            placeholder="Titulo"
+            value={currentData.title}
+          />
           <FormInputField
             formData={form}
             name="description"
             title="Descrição"
+            placeholder="Descrição"
             value={currentData.description}
           />
           <FormInputField
             formData={form}
             name="link"
             title="Link: (https://nuzap.com.br/exemplo#/DESTINO)"
+            placeholder="https://nuzap.com.br/exemplo#/DESTINO"
             value={currentData.link}
           />
 
