@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "../ui/form";
-import { FormDataFieldProps } from "@/types/form";
+import { FormDateFieldProps } from "@/types/form";
 
 export function FormDateField({
   formData,
@@ -16,7 +16,7 @@ export function FormDateField({
   value,
   name = "",
   className,
-}: FormDataFieldProps) {
+}: FormDateFieldProps) {
   const date = new Date(value as string);
 
   return (

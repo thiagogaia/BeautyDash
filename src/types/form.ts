@@ -8,7 +8,7 @@ export interface FormFieldProps {
   title?: string;
 }
 
-export interface FormDataFieldProps extends InputType, FormFieldProps {}
+export interface FormDateFieldProps extends InputType, FormFieldProps {}
 
 export interface FormInputFieldProps extends InputType, FormFieldProps {
   removeOptions?: boolean;

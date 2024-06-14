@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { FormInputField } from "@/components/form-fileds/form-input-field";
-import { FormDateField } from "@/components/form-fileds/form-data-field";
+import { FormDateField } from "@/components/form-fileds/form-date-field";
 import { formBannerSchema } from "@/schemas/store";
 import { DataType } from "../page";
 import { Separator } from "@/components/ui/separator";

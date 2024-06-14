@@ -1,9 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { CircleCheckBig, ClipboardList, Clock, Loader, Plus, ScrollText } from "lucide-react";
+import { CircleCheckBig, ClipboardList, Clock, Loader, ScrollText } from "lucide-react";
 import { DataType } from "../page";
-import { Button } from "@/components/ui/button";
+import { TaskForm } from "./task-form";
 
 interface Props {
   currentTab: string;
@@ -12,6 +12,7 @@ interface Props {
   lateTasks: DataType;
   completedTasks: DataType;
   inProgressTasks: DataType;
+  className?: string;
 }
 
 export function MenuNav({
@@ -21,6 +22,7 @@ export function MenuNav({
   lateTasks,
   completedTasks,
   inProgressTasks,
+  className,
 }: Props) {
   const data = [
     {
@@ -54,16 +56,19 @@ export function MenuNav({
   ];
 
   return (
-    <div className="hidden 3xs:block bg-background border-r-2 py-12 pr-4 overflow-hidden transition-all duration-400 w-[50%]">
+    <div
+      className={cn(
+        "bg-background border-r-2 rounded-bl-md rounded-tl-md py-12 pr-4 overflow-hidden h-full w-full",
+        className
+      )}
+    >
       <h1 className="px-3 mb-8 flex flex-col items-center gap-2 text-xl">
         <ClipboardList className="w-8 h-8" />
         Tarefas
       </h1>
 
       <div className="flex justify-center pb-8">
-        <Button className="gap-x-2 font-medium bg-purple-900 text-white hover:bg-purple-800">
-          <Plus className="w-5 h-5" /> Criar tarefa
-        </Button>
+        <TaskForm />
       </div>
 
       <ul className="space-y-4">
