@@ -11,3 +11,8 @@ export interface InputImageFileProps {
   value: string;
   removeOptions: boolean;
 }
+
+export interface LottieIconProps {
+  jsonPath: string;
+  className?: string;
+}
