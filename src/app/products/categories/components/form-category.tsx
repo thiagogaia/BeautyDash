@@ -11,6 +11,7 @@ import { DataType } from "../page";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { FormSwitchField } from "@/components/form-fileds/form-switch-field";
 import { formCategorySchema } from "@/schemas/products";
+import { Separator } from "@/components/ui/separator";
 
 interface Props {
   currentData: DataType[number];
@@ -31,7 +32,7 @@ export function FormCategory({ currentData }: Props) {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormInputField
             formData={form}
             name="name"
@@ -54,6 +55,8 @@ export function FormCategory({ currentData }: Props) {
             title="Ativar categoria"
             value={currentData.active}
           />
+
+          <Separator className="invisible py-2" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

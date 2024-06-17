@@ -1,3 +1,5 @@
+import { PageInConstruction } from "@/components/page-in-construction";
+
 export default function StorePage() {
-  return <div>home</div>;
+  return <PageInConstruction />;
 }

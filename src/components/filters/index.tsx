@@ -3,9 +3,9 @@
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Database, Search } from "lucide-react";
+import { Database, Filter, Search } from "lucide-react";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
-import { FormDateField } from "@/components/form-fileds/form-data-field";
+import { FormDateField } from "@/components/form-fileds/form-date-field";
 import { FormSelectField } from "@/components/form-fileds/form-sellect-field";
 import { filterSchema } from "@/schemas";
 import { Form } from "../ui/form";
@@ -50,6 +50,10 @@ export default function Filters() {
           <FormDateField formData={form} name="initialDate" title="Data inicial" />
           <FormDateField formData={form} name="finalDate" title="Data final" />
         </div>
+
+        <Button type="submit" variant="outline">
+          <Filter className="mr-2" /> Filtrar
+        </Button>
       </form>
     </Form>
   );

@@ -17,36 +17,38 @@ export default function EditFunction() {
   const onSubmit = (values: z.infer<typeof formEditPasswordSchema>) => console.log(values);
 
   return (
-    <div className="mx-5 sm:mx-12 my-8 w-[70vw]">
-      <h2 className="uppercase text-xl mb-6">Editar senha</h2>
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 max-w-full xs:ml-8">
-          <FormPasswordField
-            formData={form}
-            name="currentPassword"
-            title="Senha atual"
-            placeholder="Senha atual"
-          />
-          <FormPasswordField
-            formData={form}
-            name="newPassword"
-            title="Nova senha"
-            placeholder="Nova senha"
-          />
-          <FormPasswordField
-            formData={form}
-            name="confirmPassword"
-            title="Confirmação senha"
-            placeholder="Confirmação senha"
-          />
+    <div className="mx-5 sm:mx-12 my-6">
+      <div className="w-full md:w-[70vw]">
+        <h2 className="uppercase text-xl mb-6">Editar senha</h2>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 max-w-full xs:ml-8">
+            <FormPasswordField
+              formData={form}
+              name="currentPassword"
+              title="Senha atual"
+              placeholder="Senha atual"
+            />
+            <FormPasswordField
+              formData={form}
+              name="newPassword"
+              title="Nova senha"
+              placeholder="Nova senha"
+            />
+            <FormPasswordField
+              formData={form}
+              name="confirmPassword"
+              title="Confirmação senha"
+              placeholder="Confirmação senha"
+            />
 
-          <div className="pt-8">
-            <Button type="submit" className="save-form-button w-full">
-              Salvar
-            </Button>
-          </div>
-        </form>
-      </Form>
+            <div className="pt-8">
+              <Button type="submit" className="save-form-button w-full">
+                Salvar
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
     </div>
   );
 }

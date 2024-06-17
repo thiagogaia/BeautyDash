@@ -12,15 +12,24 @@ import TableCellActions from "@/components/table-cell-actions";
 
 import { formatPrice, maskPhone } from "@/lib/utils";
 import { DataType } from "../page";
+import { useRouter } from "next/navigation";
 
 interface Props {
   data: DataType;
+  setCurrentTab: (e: string) => void;
+  setCurrentData: (e: DataType[number]) => void;
+  setEditData: (e: boolean) => void;
 }
 
-export function ListClients({ data }: Props) {
-  const edit = () => {
-    console.log("edit");
+export function ListClients({ data, setCurrentData, setCurrentTab, setEditData }: Props) {
+  const { push } = useRouter();
+
+  const edit = (itemData: DataType[number]) => {
+    setCurrentTab("add");
+    setCurrentData(itemData);
+    setEditData(true);
   };
+
   const remove = () => {
     console.log("remove");
   };
@@ -66,7 +75,11 @@ export function ListClients({ data }: Props) {
               {formatPrice(item.balance)}
             </TableCell>
 
-            <TableCellActions className="w-1/6 text-right" editData={edit} exclude={remove} />
+            <TableCellActions
+              className="w-1/6 text-right"
+              editData={() => edit(item)}
+              exclude={remove}
+            />
           </TableRow>
         ))}
       </TableBody>

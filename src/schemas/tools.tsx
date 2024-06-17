@@ -24,3 +24,11 @@ export const formDomainSchema = z.object({
   subdomain: z.string(),
   actionType: z.string(),
 });
+
+export const formTaskSchema = z.object({
+  subject: z.string(),
+  opportunity: z.string(),
+  status: z.string().default("em andamento"),
+  type: z.string(),
+  date: z.date(),
+});

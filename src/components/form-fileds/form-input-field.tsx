@@ -2,9 +2,9 @@
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { InputFile } from "../input-file";
 import { FormInputFieldProps } from "@/types/form";
 import { cn } from "@/lib/utils";
+import { InputImageFile } from "../input-image-file";
 
 export function FormInputField({
   formData,
@@ -24,14 +24,10 @@ export function FormInputField({
       name={name}
       render={({ field }) => (
         <FormItem className={className}>
-          {title && (
-            <FormLabel className="flex items-center gap-x-1 break-all text-primary/50">
-              {title}
-            </FormLabel>
-          )}
+          {title && <FormLabel className="text-primary/50 break-all">{title}</FormLabel>}
           <FormControl>
             {type === "file" ? (
-              <InputFile
+              <InputImageFile
                 field={field}
                 {...field}
                 value={(value as string) || ""}

@@ -11,6 +11,7 @@ import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { maskPhone } from "@/lib/utils";
 import { formMyStoreSchema } from "@/schemas/profile";
 import { FormSelectField } from "@/components/form-fileds/form-sellect-field";
+import { Separator } from "@/components/ui/separator";
 
 export function FormStore() {
   const form = useForm<z.infer<typeof formMyStoreSchema>>({
@@ -22,7 +23,7 @@ export function FormStore() {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormInputField formData={form} name="name" title="Nome" placeholder="Nome e sobrenome" />
           <FormSelectField
             formData={form}
@@ -40,6 +41,8 @@ export function FormStore() {
             autoComplete="off"
             placeholder="Número de whatsapp"
           />
+
+          <Separator className="invisible py-2" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

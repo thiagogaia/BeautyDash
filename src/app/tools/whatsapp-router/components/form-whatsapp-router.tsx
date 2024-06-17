@@ -10,6 +10,7 @@ import { z } from "zod";
 import { FormInputField } from "@/components/form-fileds/form-input-field";
 import { formWhatsappRouterSchema } from "@/schemas/tools";
 import { maskPhone, replaceWhiteSpace } from "@/lib/utils";
+import { Separator } from "@/components/ui/separator";
 
 export function FormWhatsappRouter() {
   const form = useForm<z.infer<typeof formWhatsappRouterSchema>>({
@@ -29,7 +30,7 @@ export function FormWhatsappRouter() {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormInputField
             formData={form}
             name="name"
@@ -78,6 +79,8 @@ export function FormWhatsappRouter() {
               </div>
             </div>
           </div>
+
+          <Separator className="invisible py-2" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Gerar Link

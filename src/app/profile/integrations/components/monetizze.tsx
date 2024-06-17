@@ -9,7 +9,7 @@ interface Props {
 
 export function Monetizze({ data, formData }: Props) {
   return (
-    <div className="border-b pb-12">
+    <div>
       <h2 className="uppercase mb-6 text-xl">Monetizze</h2>
       <div className="flex flex-col gap-y-4 xs:ml-8">
         <p className="text-primary/60">

@@ -13,6 +13,7 @@ import { FormSelectField } from "@/components/form-fileds/form-sellect-field";
 import { DataType } from "../page";
 import { useEffect, useState } from "react";
 import { FormExternalUrl } from "./form-external-utl";
+import { Separator } from "@/components/ui/separator";
 
 interface Props {
   currentData: DataType[number];
@@ -36,7 +37,7 @@ export function FormDomain({ currentData }: Props) {
   return (
     <div className="pb-12">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <FormInputField formData={form} name="name" title="Nome" placeholder="Nome" />
 
           <FormSelectField
@@ -77,7 +78,6 @@ export function FormDomain({ currentData }: Props) {
               name="linkStore"
               title="Vincular loja"
               placeholder="Selecionar loja"
-              className="pb-8"
               data={["exemplo"]}
             />
           )}
@@ -85,6 +85,8 @@ export function FormDomain({ currentData }: Props) {
             currentActionType === "Carregar uma URL externa com iframe") && (
             <FormExternalUrl currentData={currentData} formData={form} />
           )}
+
+          <Separator className="invisible py-2" />
 
           <Button type="submit" className="w-full h-12 save-form-button text-xl">
             Salvar

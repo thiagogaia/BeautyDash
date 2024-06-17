@@ -1,19 +1,17 @@
 "use client";
 
 import { FormInputField } from "@/components/form-fileds/form-input-field";
-import { FormSelectField } from "@/components/form-fileds/form-sellect-field";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { formMyDataSchema } from "@/schemas/profile";
+import { AddressFields } from "@/components/address-fields";
+
+import { maskPhone } from "@/lib/utils";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Shoopkeeper } from "./components/shopkeeper";
-import { Pix } from "./components/pix";
-import { PicPay } from "./components/picpay";
-import { MercadoPago } from "./components/mercado-pago";
-import { Monetizze } from "./components/monetizze";
-import { Asaas } from "./components/asaas";
+import { Separator } from "@/components/ui/separator";
 
 const data = {
   name: "loujinha",
@@ -34,18 +32,63 @@ export default function MyData() {
   });
 
   const onSubmit = (values: z.infer<typeof formMyDataSchema>) => console.log(values);
+
+  const userName = "Jorge Silva";
+
   return (
-    <div className=" mx-5 sm:mx-12 mt-6">
-      <div className="mt-6 w-full md:w-[70vw]">
+    <div className="mx-5 sm:mx-12 mt-6">
+      <div className="w-full md:w-[70vw]">
         <div className="pb-12">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <Shoopkeeper formData={form} data={data} />
-              <Pix formData={form} data={data} />
-              <PicPay formData={form} data={data} />
-              <MercadoPago formData={form} data={data} />
-              <Monetizze formData={form} data={data} />
-              <Asaas formData={form} data={data} />
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <h2 className="uppercase mb-6 text-xl">{userName} - LOJISTA</h2>
+              <div className="flex flex-col gap-y-6 xs:ml-8">
+                <FormInputField
+                  formData={form}
+                  name="image"
+                  type="file"
+                  title="Fotode perfil"
+                  removeOptions={false}
+                  className="items-center xs:w-fit mb-6"
+                />
+                <FormInputField
+                  formData={form}
+                  name="name"
+                  title="Nome Completo"
+                  placeholder="Nome Completo"
+                  value={data.name}
+                  className="w-full"
+                />
+
+                <div className="flex w-full justify-between flex-wrap xs:flex-nowrap gap-y-4 gap-x-8 items-end">
+                  <FormInputField
+                    formData={form}
+                    name="phone"
+                    title="Telefone"
+                    placeholder="Número do seu telefone"
+                    format={maskPhone}
+                    maxLength={15}
+                    autoComplete="off"
+                    value={data.phone}
+                    className="w-full xs:w-2/4"
+                  />
+                  <FormInputField
+                    formData={form}
+                    name="email"
+                    disabled
+                    title="Email"
+                    value={data.email}
+                    placeholder={data.email}
+                    className="w-full xs:w-2/4"
+                  />
+                </div>
+
+                <Separator className="my-4" />
+
+                <AddressFields formData={form} data={data} />
+              </div>
+
+              <Separator className="invisible py-2" />
 
               <Button type="submit" className="w-full h-12 save-form-button text-xl">
                 Salvar

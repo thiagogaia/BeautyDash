@@ -1,5 +1,13 @@
 "use client";
 
+import { NewFunnel } from "./components/new-funnel";
+import { Welcome } from "./components/welcome";
+
 export default function Opportunities() {
-  return <div>componente oportunidades</div>;
+  return (
+    <div className="w-[70vw]">
+      {/* <Welcome /> */}
+      <NewFunnel />
+    </div>
+  );
 }

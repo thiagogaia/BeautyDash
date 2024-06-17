@@ -88,6 +88,11 @@
     border-color: #0072bc !important;
   }
 
+  .checkbox-checked {
+    color: white !important;
+    background-color: #4361ee !important;
+  }
+
   .radio-group-checked>span>svg {
     fill: #0072bc;
     color: #0072bc;
