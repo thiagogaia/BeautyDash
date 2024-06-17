@@ -1,7 +1,13 @@
 "use client";
 
-import { PageInConstruction } from "@/components/page-in-construction";
+import { NewFunnel } from "./components/new-funnel";
+import { Welcome } from "./components/welcome";
 
 export default function Opportunities() {
-  return <PageInConstruction />;
+  return (
+    <div className="w-[70vw]">
+      {/* <Welcome /> */}
+      <NewFunnel />
+    </div>
+  );
 }
